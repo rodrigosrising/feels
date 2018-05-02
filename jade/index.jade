@@ -1,0 +1,40 @@
+//output: ../index.html
+doctype
+html(class="no-js", lang="pt-BR", dir="ltr")
+
+  head
+    include includes/head
+    //css
+
+  body
+    div(class="off-canvas position-left", id="offCanvasLeft", data-off-canvas)
+      //close button
+      button(class="close-button", aria-label="Close Menu", type="button", data-close)
+        span(aria-hidden="true") &times
+      //Menu
+      include includes/off-canvas-menu
+
+    div(class="off-canvas-content", data-off-canvas-content)
+      //header
+      include includes/header
+      //header
+      //banner
+      div.banner-wrapper
+        include includes/social-media
+        include includes/banner
+      //banner
+      //main
+      main.main
+        section#home-destaques
+          include includes/home-destaques
+        section#produtos-destaques.section-wrapper
+          include includes/produtos-destaques
+        section#contato.section-wrapper
+
+      //main
+      //footer
+      include includes/footer
+      //footer
+    //scripts
+    include includes/foot
+    //scripts

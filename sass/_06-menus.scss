@@ -1,0 +1,51 @@
+.nav-container{
+  font-size: 0.9rem;
+  .main-menu{
+    padding-left: 0.5rem;
+  }
+  .main-menu, .acc-menu{
+    a{
+      border-bottom: 2px solid transparent;
+      margin-bottom: 0;
+      padding: 0.7rem 0.5rem;
+      font-weight: 600;
+      &:hover, &:focus{
+        background: none;
+        color: $texto;
+        border-bottom: 2px solid $cor;
+      }
+    }
+    .active{
+      a{
+        background: none;
+        color: $texto;
+        border-bottom: 2px solid $cor;
+      }
+    }
+  }
+  .acc-menu{
+    li{
+      &:last-child, &:first-child{
+        a{
+          padding-bottom: 0.6rem;
+          &:hover, &:focus{
+            background: none;
+            color: $texto;
+            border-bottom: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}
+.footer-menu{
+  a{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.pagamentos-menu{
+  .payment{
+    margin-right: 0.3rem
+  }
+}

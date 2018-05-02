@@ -1,0 +1,37 @@
+.owl-produtos-destaques{
+  .owl-nav{
+    position: absolute;
+    width: 100%;
+    top: 33%;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    button[class*='owl-']{
+      background: $branco!important;
+      border-radius: 0!important;
+      padding: 0.2rem 0.5rem!important;
+      &:hover, &:focus{
+        color: $preto;
+      }
+    }
+    .owl-prev{
+      left: 0;
+    }
+  }
+}
+.produto{
+  border: 1px solid $branco;
+  .descricao-produto{
+    padding: 0.7rem;
+    h4{
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .price{
+      font-family: $titilium;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: $preto;
+    }
+  }
+}

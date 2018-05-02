@@ -1,0 +1,49 @@
+.destaque-bg{
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 2px solid $branco;
+  .destaque-wall{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba($branco, 0.0);
+    transition: all 0.25s ease-out;
+  }
+  &:hover{
+    .destaque-wall{
+      background: rgba($branco, 0.25);
+    }
+  }
+  .titulo-destaque{
+    background: rgba($preto, 0.9);
+    color: $branco;
+    display: block;
+    min-width: 25rem;
+    width: 25rem;
+    text-transform: uppercase;
+    padding: 0.2rem 1rem;
+    position: absolute;
+    top: 0.5rem;
+    h2{
+      color: $branco;
+      margin: 0;
+    }
+  }
+}
+.destaque-full{
+  height: 100vh;
+  .titulo-destaque{
+    right: 0.5rem;
+    text-align: right;
+  }
+}
+.destaque-half{
+  height: 50vh;
+  .titulo-destaque{
+    left: 0.5rem;
+  }
+}

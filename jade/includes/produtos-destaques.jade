@@ -1,0 +1,32 @@
+- var image = "assets/img/"
+
+//- PRODUCT MIXING
+mixin product(title, price, img)
+  div.produto
+    img(src="#{image}#{img}", alt="#{title}")
+    div.descricao-produto
+      h4
+        a(href="")  #{title}
+      p.price R$ #{price}
+      a(href="", class="button") Comprar
+
+div.grid-container
+  div.grid-x.grid-padding-x
+    div.cell.small-12
+      h2.titulo Mais Populares
+    div.cell.small-12
+      div(class="owl-carousel owl-produtos-destaques owl-theme")
+        //- div.produtos
+        //-   img(src="assets/img/imagem-produto-1.jpg", alt="")
+        //-   h4
+        //-     a(href="")  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        //-   p.price R$ 99,90
+        //-   a(href="", class="button") Comprar
+        +product('Lorem ipsum dolor sit amet consectetur adipisicing elit', '99,90', 'imagem-produto-1.jpg')
+        +product('Lorem ipsum dolor sit amet consectetur elit', '99,90', 'imagem-produto-2.jpg')
+        +product('Lorem ipsum dolor sit amet consectetur adipisicing', '109,90', 'imagem-produto-3.jpg')
+        +product('Lorem ipsum dolor sit consectetur adipisicing elit', '99,90', 'imagem-produto-2.jpg')
+        +product('Lorem ipsum dolor amet consectetur adipisicing elit', '89,90', 'imagem-produto-1.jpg')
+        +product('Lorem ipsum sit amet consectetur adipisicing', '109,90', 'imagem-produto-3.jpg')
+        +product('Lorem dolor sit amet consectetur adipisicing elit', '99,90', 'imagem-produto-2.jpg')
+
