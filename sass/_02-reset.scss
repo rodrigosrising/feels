@@ -223,3 +223,12 @@ h1, h2, h3, h4, h5, h6{
             transform: translateX(0) scale(1);
   }
 }
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .lista-produtos{
+    .large-fixed-size{
+      width: 250px;
+    }
+  }
+}

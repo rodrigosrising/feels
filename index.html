@@ -1,5 +1,4 @@
-
-<!--output: ../index.html--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr" class="no-js">
   <head>
     <meta charset="utf-8">
@@ -17,8 +16,6 @@
   </head>
   <body>
     <div id="offCanvasLeft" data-off-canvas class="off-canvas position-left">
-      <!--close button-->
-      <button aria-label="Close Menu" type="button" data-close class="close-button"><span aria-hidden="true">&times</span></button>
       <!--Menu-->
       <nav>
         <ul data-accordion-menu data-submenu-toggle="true" class="vertical menu accordion-menu off-canvas-menu">
@@ -34,20 +31,21 @@
       <!--header-->
       <header class="header">
         <div class="grid-container">
-          <div class="grid-x align-bottom">
+          <div class="grid-x align-menu">
             <div class="cell shrink logo-bg"><img src="assets/img/feels-logo.png" alt=""></div>
             <div class="cell auto nav-container">
-              <nav class="main-nav">
-                <ul class="menu main-menu float-left uppercase">
-                  <li><a href="">Início</a></li>
-                  <li><a href="">Masculino</a></li>
-                  <li><a href="">Feminino</a></li>
+              <nav class="main-nav clearfix">
+                <button type="button" data-open="offCanvasLeft" class="menu-icon hide-for-medium float-right"></button>
+                <ul class="menu main-menu float-left uppercase show-for-medium">
+                  <li class="active"><a href="index.html">Início</a></li>
+                  <li><a href="produtos.html">Masculino</a></li>
+                  <li><a href="produtos.html">Feminino</a></li>
                   <li><a href="">Faça Você mesmo</a></li>
                   <li><a href="">contato</a></li>
                 </ul>
                 <ul class="menu acc-menu float-right uppercase">
                   <li><a href=""><i class="fas fa-search"></i></a></li>
-                  <li><a href="">Minha Conta</a></li>
+                  <li class="show-for-medium"><a href="">Minha Conta</a></li>
                   <li><a href=""><i class="fas fa-shopping-bag"></i></a></li>
                 </ul>
               </nav>
@@ -58,7 +56,7 @@
       <!--header-->
       <!--banner-->
       <div class="banner-wrapper">
-        <div class="grid-container social-media-container">
+        <div class="grid-container social-media-container show-for-medium">
           <div class="grid-x">
             <div class="cell small-12">
               <ul class="menu social-media">
@@ -84,14 +82,14 @@
         <section id="home-destaques">
           <div class="grid-container full fluid">
             <div class="grid-x">
-              <div class="cell small-12 large-6"><a href="" style="background-image: url('assets/img/destaque-full.jpg');" class=" destaque-bg destaque-full"><span class="destaque-wall"></span><span class="titulo-destaque">
+              <div class="cell small-12 large-6"><a href="" style="background-image: url('assets/img/destaque-full.jpg');" class="destaque-bg destaque-full"><span class="destaque-wall"></span><span class="titulo-destaque">
                     <h2>Camisetas</h2></span></a></div>
               <div class="cell small-12 large-6">
                 <div class="grid-container fluid full">
                   <div class="grid-x">
-                    <div class="cell small-12"><a href="" style="background-image: url('assets/img/destaque-half-1.jpg');" class=" destaque-bg destaque-half"><span class="destaque-wall"></span><span class="titulo-destaque">
+                    <div class="cell small-12"><a href="" style="background-image: url('assets/img/destaque-half-1.jpg');" class="destaque-bg destaque-half"><span class="destaque-wall"></span><span class="titulo-destaque">
                           <h2>Acessórios</h2></span></a></div>
-                    <div class="cell small-12"><a href="" style="background-image: url('assets/img/destaque-half-2.jpg');" class=" destaque-bg destaque-half"><span class="destaque-wall"></span><span class="titulo-destaque">
+                    <div class="cell small-12"><a href="" style="background-image: url('assets/img/destaque-half-2.jpg');" class="destaque-bg destaque-half"><span class="destaque-wall"></span><span class="titulo-destaque">
                           <h2>Bermudas</h2></span></a></div>
                   </div>
                 </div>
@@ -107,43 +105,43 @@
               </div>
               <div class="cell small-12">
                 <div class="owl-carousel owl-produtos-destaques owl-theme">
-                            <div class="produto"><img src="assets/img/imagem-produto-1.jpg" alt="Lorem ipsum dolor sit amet consectetur adipisicing elit">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-1.jpg" alt="Lorem ipsum dolor sit amet consectetur adipisicing elit"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
                                 <p class="price">R$ 99,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-2.jpg" alt="Lorem ipsum dolor sit amet consectetur elit">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-2.jpg" alt="Lorem ipsum dolor sit amet consectetur elit"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum dolor sit amet consectetur elit</a></h4>
                                 <p class="price">R$ 99,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-3.jpg" alt="Lorem ipsum dolor sit amet consectetur adipisicing">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-3.jpg" alt="Lorem ipsum dolor sit amet consectetur adipisicing"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum dolor sit amet consectetur adipisicing</a></h4>
                                 <p class="price">R$ 109,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-2.jpg" alt="Lorem ipsum dolor sit consectetur adipisicing elit">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-2.jpg" alt="Lorem ipsum dolor sit consectetur adipisicing elit"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum dolor sit consectetur adipisicing elit</a></h4>
                                 <p class="price">R$ 99,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-1.jpg" alt="Lorem ipsum dolor amet consectetur adipisicing elit">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-1.jpg" alt="Lorem ipsum dolor amet consectetur adipisicing elit"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum dolor amet consectetur adipisicing elit</a></h4>
                                 <p class="price">R$ 89,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-3.jpg" alt="Lorem ipsum sit amet consectetur adipisicing">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-3.jpg" alt="Lorem ipsum sit amet consectetur adipisicing"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem ipsum sit amet consectetur adipisicing</a></h4>
                                 <p class="price">R$ 109,90</p><a href="" class="button">Comprar</a>
                               </div>
                             </div>
-                            <div class="produto"><img src="assets/img/imagem-produto-2.jpg" alt="Lorem dolor sit amet consectetur adipisicing elit">
+                            <div class="produto"><a href=""><img src="assets/img/imagem-produto-2.jpg" alt="Lorem dolor sit amet consectetur adipisicing elit"></a>
                               <div class="descricao-produto">
                                 <h4><a href=""> Lorem dolor sit amet consectetur adipisicing elit</a></h4>
                                 <p class="price">R$ 99,90</p><a href="" class="button">Comprar</a>
@@ -154,7 +152,46 @@
             </div>
           </div>
         </section>
-        <section id="contato" class="section-wrapper"></section>
+        <section id="contato-home">
+          <div class="grid-container full">
+            <div class="grid-x">
+              <div style="background-image: url('assets/img/contato.jpg');" class="cell small-12 large-6 contato-box contato-bg"></div>
+            </div>
+            <div class="contato-info-wrapper">
+              <div class="grid-container">
+                <div class="grid-x">
+                  <div class="cell small-12 large-6"><span class="info-contato float-right">
+                      <ul class="menu social-media">
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-pinterest"></i></a></li>
+                      </ul><span class="info-contato-tel">(41) 98765-4321</span></span></div>
+                  <div class="cell small-12 large-6 contact-form"><span class="info-contato">
+                      <h2>Contato</h2></span>
+                    <form action="">
+                      <div class="grid-container">
+                        <div class="grid-x grid-margin-x grid-padding-x">
+                          <div class="small-12 cell">
+                            <input type="text" placeholder="Nome">
+                          </div>
+                          <div class="small-12 cell">
+                            <input type="email" placeholder="Email">
+                          </div>
+                          <div class="small-12 cell">
+                            <textarea placeholder="Mensagem"></textarea>
+                          </div>
+                          <div class="small-12 cell">
+                            <input type="submit" value="Enviar" class="button float-right">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <!--main-->
       <!--footer-->
@@ -162,7 +199,7 @@
         <div class="grid-container">
           <div class="grid-x grid-padding-x grid-margin-x">
             <div class="cell small-12 medium-6 large-4">
-              <h3 class="uppercase">Ajuda</h3>
+              <h4>Ajuda</h4>
               <ul class="menu footer-menu vertical uppercase">
                 <li><a href="">Início</a></li>
                 <li><a href="">Faça Você mesmo</a></li>
@@ -175,7 +212,7 @@
               </ul>
             </div>
             <div class="cell small-12 medium-6 large-4">
-              <h3 class="uppercase">Formas de Pagamento</h3>
+              <h4>Formas de Pagamento</h4>
               <ul class="menu pagamentos-menu uppercase">
                 <li class="payment"><i class="fab fa-cc-visa fa-2x"></i></li>
                 <li class="payment"><i class="fab fa-cc-mastercard fa-2x"></i></li>
@@ -185,7 +222,7 @@
               </ul>
             </div>
             <div class="cell small-12 medium-6 large-4">
-              <h3 class="uppercase">Newsletter</h3>
+              <h4>Newsletter</h4>
               <ul class="menu footer-menu vertical uppercase">
                 <div class="input-group">
                   <input type="email" class="input-group-field">
@@ -194,13 +231,13 @@
                   </div>
                 </div>
               </ul>
-              <h3 class="uppercase">Mídias Sociais
+              <h4>Mídias Sociais
                 <ul class="menu social-media social-media-footer">
                   <li><a href=""><i class="fab fa-instagram"></i></a></li>
                   <li><a href=""><i class="fab fa-facebook"></i></a></li>
                   <li><a href=""><i class="fab fa-pinterest"></i></a></li>
                 </ul>
-              </h3>
+              </h4>
             </div>
           </div>
         </div>

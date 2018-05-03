@@ -1,11 +1,12 @@
-nav.main-nav
-  ul(class="menu main-menu float-left uppercase")
+nav.main-nav.clearfix
+  button(class="menu-icon hide-for-medium float-right", type="button", data-open="offCanvasLeft")
+  ul(class="menu main-menu float-left uppercase show-for-medium")
+    li.active
+      a(href="index.html") Início
     li
-      a(href="") Início
+      a(href="produtos.html") Masculino
     li
-      a(href="") Masculino
-    li
-      a(href="") Feminino
+      a(href="produtos.html") Feminino
     li
       a(href="") Faça Você mesmo
     li
@@ -15,7 +16,7 @@ nav.main-nav
     li
       a(href="")
         i.fas.fa-search
-    li
+    li.show-for-medium
       a(href="") Minha Conta
     li
       a(href="")

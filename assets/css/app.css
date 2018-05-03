@@ -250,6 +250,8 @@ h6 {
   }
 }
 
+/* Large and up */
+
 .button {
   text-transform: uppercase;
   background: #000;
@@ -370,6 +372,31 @@ h6 {
   margin-right: 0.3rem;
 }
 
+.align-menu {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.menu-icon::after {
+  background: #000;
+  -webkit-box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
+
+.menu-icon:hover::after {
+  background: #000;
+  -webkit-box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
+
+/* Medium and up */
+
 .banner-wrapper {
   position: relative;
 }
@@ -390,6 +417,16 @@ h6 {
 
 .banner-wrapper .owl-home-slides .owl-dots .active span {
   background: #000;
+}
+
+.banner-wrapper .banner-interno {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 400px;
+  height: 50vh;
 }
 
 .section-wrapper {
@@ -423,12 +460,11 @@ h6 {
   background: rgba(0, 0, 0, 0.9);
   color: #FFF;
   display: block;
-  min-width: 25rem;
-  width: 25rem;
+  width: 100%;
   text-transform: uppercase;
   padding: 0.2rem 1rem;
   position: absolute;
-  top: 0.5rem;
+  top: 0;
 }
 
 .destaque-bg .titulo-destaque h2 {
@@ -437,11 +473,11 @@ h6 {
 }
 
 .destaque-full {
-  height: 100vh;
+  height: 50vh;
 }
 
 .destaque-full .titulo-destaque {
-  right: 0.5rem;
+  right: 0;
   text-align: right;
 }
 
@@ -450,8 +486,10 @@ h6 {
 }
 
 .destaque-half .titulo-destaque {
-  left: 0.5rem;
+  left: 0;
 }
+
+/* Medium and up */
 
 .owl-produtos-destaques .owl-nav {
   position: absolute;
@@ -501,7 +539,158 @@ h6 {
   color: #000;
 }
 
+.lista-produtos .produto img,
+.owl-produtos-destaques .produto img {
+  width: 100%;
+  opacity: 1;
+}
+
+.lista-produtos .produto:hover img,
+.owl-produtos-destaques .produto:hover img {
+  opacity: 0.85;
+}
+
+.lista-produtos .filter-box,
+.owl-produtos-destaques .filter-box {
+  border-bottom: 1px solid #000;
+  margin-bottom: 2rem;
+}
+
+#contato-home {
+  position: relative;
+  background: #000;
+}
+
+#contato-home .contato-box {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 400px;
+  height: 50vh;
+}
+
+#contato-home .contato-info-wrapper {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+}
+
+#contato-home .info-contato {
+  background: #000;
+  display: block;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  border-top: 2px solid #FFF;
+  width: 100%;
+}
+
+#contato-home .info-contato h2 {
+  color: #FFF;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+#contato-home .info-contato .info-contato-tel {
+  font-family: "Titillium Web", sans-serif;
+  color: #FFF;
+  font-size: 1.4rem;
+  line-height: 3.5rem;
+  display: inline-block;
+  float: right;
+}
+
+#contato-home .info-contato .social-media {
+  float: right;
+}
+
+#contato-home .info-contato .social-media a {
+  color: #FFF;
+  font-size: 2rem;
+}
+
+#contato-home .contact-form [type='text'],
+#contato-home .contact-form [type='password'],
+#contato-home .contact-form [type='date'],
+#contato-home .contact-form [type='datetime'],
+#contato-home .contact-form [type='datetime-local'],
+#contato-home .contact-form [type='month'],
+#contato-home .contact-form [type='week'],
+#contato-home .contact-form [type='email'],
+#contato-home .contact-form [type='number'],
+#contato-home .contact-form [type='search'],
+#contato-home .contact-form [type='tel'],
+#contato-home .contact-form [type='time'],
+#contato-home .contact-form [type='url'],
+#contato-home .contact-form [type='color'] {
+  background: #000;
+  border: 1px solid #FFF;
+  border-top: 1px solid #000;
+  text-shadow: none;
+  color: #FFF;
+  margin: 1rem 0;
+}
+
+#contato-home .contact-form textarea {
+  background: #000;
+  border: 1px solid #FFF;
+  border-top: 1px solid #000;
+  text-shadow: none;
+  color: #FFF;
+  margin: 1rem 0;
+  min-height: 150px;
+  height: 150px;
+}
+
+#contato-home .contact-form [type='text']:focus,
+#contato-home .contact-form [type='password']:focus,
+#contato-home .contact-form [type='date']:focus,
+#contato-home .contact-form [type='datetime']:focus,
+#contato-home .contact-form [type='datetime-local']:focus,
+#contato-home .contact-form [type='month']:focus,
+#contato-home .contact-form [type='week']:focus,
+#contato-home .contact-form [type='email']:focus,
+#contato-home .contact-form [type='number']:focus,
+#contato-home .contact-form [type='search']:focus,
+#contato-home .contact-form [type='tel']:focus,
+#contato-home .contact-form [type='time']:focus,
+#contato-home .contact-form [type='url']:focus,
+#contato-home .contact-form [type='color']:focus,
+#contato-home .contact-form textarea:focus {
+  border-color: transparent;
+  background-color: #151515;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .footer {
   background: #f7f7f7;
+}
+
+.footer h4 {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 40em) {
+  .align-menu {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .destaque-bg .titulo-destaque {
+    min-width: 25rem;
+    width: 25rem;
+  }
+
+  .destaque-full {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .lista-produtos .large-fixed-size {
+    width: 250px;
+  }
 }
 /*# sourceMappingURL=app.css.map */

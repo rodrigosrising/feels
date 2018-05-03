@@ -14,7 +14,7 @@ gulp.task('clearCache', function() {
 });
 
 // Static Server + Watching scss files
-gulp.task('serve', ['sass'], function(){
+gulp.task('serve', ['sass', 'jade'], function(){
 
     browserSync.init({
         proxy: "http://localhost:8888/sites/feels/html"

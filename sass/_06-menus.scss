@@ -49,3 +49,26 @@
     margin-right: 0.3rem
   }
 }
+.align-menu{
+  align-items: center;
+}
+.menu-icon{
+  margin-left: 40px;
+  margin-top: 10px;
+  &::after{
+    background: $preto;
+    box-shadow: 0 7px 0 $preto, 0 14px 0 $preto;
+  }
+  &:hover{
+    &::after {
+      background: $preto;
+      box-shadow: 0 7px 0 $preto, 0 14px 0 $preto;
+    }
+  }
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .align-menu{
+    align-items: flex-end;
+  }
+}

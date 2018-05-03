@@ -1,0 +1,65 @@
+- var image = "assets/img/"
+
+//- PRODUCT MIXING
+mixin product(title, price, img)
+  div.produto.cell.small-6.medium-4.large-3
+    a(href="")
+      img(src="#{image}#{img}", alt="#{title}")
+    div.descricao-produto
+      h4(data-equalizer-watch)
+        a(href="")  #{title}
+      p.price R$ #{price}
+      a(href="", class="button") Comprar
+
+div.grid-container
+  div.grid-x.grid-margin-x
+    div.cell.small-12.filter-box
+      div.grid-container
+        div.grid-x.grid-padding-x.align-bottom
+          div.cell.small-12.medium-6
+            div.button-group.tiny
+              a(href="", class="button") Frases
+              a(href="", class="button") Estampadas
+              a(href="", class="button") Ilustração
+              a(href="", class="button") College
+
+          div.cell.small-12.medium-6.large-3
+            input(type="search", placeholder="Buscar Produto")
+
+          div.cell.small-12.medium-6.large-3
+            select
+              option(value="Menor Preço") Menor Preço
+              option(value="Maior Preço") Maior Preço
+              option(value="Popularidade") Popularidade
+              option(value="Mais Recentes") Mais Recentes
+    div.cell.small-12.medium-3.large-fixed-size
+      include sidebar-content
+    div.cell.auto
+      div.grid-container.full
+        div(class="grid-x", data-equalizer, data-equalize-on="medium")
+          +product('Lorem ipsum dolor sit amet consectetur adipisicing elit', '99,90', 'imagem-produto-1.jpg')
+          +product('Lorem ipsum dolor sit amet consectetur elit', '99,90', 'imagem-produto-2.jpg')
+          +product('Lorem ipsum dolor sit amet consectetur adipisicing', '109,90', 'imagem-produto-3.jpg')
+          +product('Lorem ipsum dolor sit consectetur adipisicing elit', '99,90', 'imagem-produto-2.jpg')
+          +product('Lorem ipsum dolor amet consectetur adipisicing elit', '89,90', 'imagem-produto-1.jpg')
+          +product('Lorem ipsum sit amet consectetur adipisicing', '109,90', 'imagem-produto-3.jpg')
+          +product('Lorem dolor sit amet consectetur adipisicing elit', '99,90', 'imagem-produto-2.jpg')
+          +product('Lorem ipsum dolor sit amet consectetur adipisicing elit', '99,90', 'imagem-produto-1.jpg')
+          +product('Lorem ipsum dolor sit amet consectetur elit', '99,90', 'imagem-produto-2.jpg')
+          +product('Lorem ipsum dolor sit amet consectetur adipisicing', '109,90', 'imagem-produto-3.jpg')
+          +product('Lorem ipsum dolor sit consectetur adipisicing elit', '99,90', 'imagem-produto-2.jpg')
+          +product('Lorem ipsum dolor amet consectetur adipisicing elit', '89,90', 'imagem-produto-1.jpg')
+
+      //- PAGINATION
+
+      nav(aria-label="Pagination")
+        ul(class="pagination text-center")
+          li(class="pagination-previous disabled") Anterior
+          li.current #[span(class="show-for-sr") você está aqui] 1
+          li #[a(href="#", aria-label="Page 2") 2]
+          li #[a(href="#", aria-label="Page 3") 3]
+          li #[a(href="#", aria-label="Page 4") 4]
+          li.ellipsis
+          li #[a(href="#", aria-label="Page 8") 8]
+          li #[a(href="#", aria-label="Page 9") 9]
+          li(class="pagination-next") #[a(href="#", aria-label="Next page") Próxima]

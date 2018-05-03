@@ -35,3 +35,20 @@
     }
   }
 }
+.lista-produtos, .owl-produtos-destaques{
+  .produto{
+    img{
+      width: 100%;
+      opacity: 1;
+    }
+    &:hover{
+      img{
+        opacity: 0.85;
+      }
+    }
+  }
+  .filter-box{
+    border-bottom: 1px solid $preto;
+    margin-bottom: 2rem;
+  }
+}

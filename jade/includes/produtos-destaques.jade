@@ -3,7 +3,8 @@
 //- PRODUCT MIXING
 mixin product(title, price, img)
   div.produto
-    img(src="#{image}#{img}", alt="#{title}")
+    a(href="")
+      img(src="#{image}#{img}", alt="#{title}")
     div.descricao-produto
       h4
         a(href="")  #{title}
