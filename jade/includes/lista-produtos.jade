@@ -3,13 +3,13 @@
 //- PRODUCT MIXING
 mixin product(title, price, img)
   div.produto.cell.small-6.medium-4.large-3
-    a(href="")
+    a(href="produto.html")
       img(src="#{image}#{img}", alt="#{title}")
     div.descricao-produto
       h4(data-equalizer-watch)
-        a(href="")  #{title}
+        a(href="produto.html")  #{title}
       p.price R$ #{price}
-      a(href="", class="button") Comprar
+      a(href="produto.html", class="button") Comprar
 
 div.grid-container
   div.grid-x.grid-margin-x
@@ -55,7 +55,7 @@ div.grid-container
       nav(aria-label="Pagination")
         ul(class="pagination text-center")
           li(class="pagination-previous disabled") Anterior
-          li.current #[span(class="show-for-sr") você está aqui] 1
+          li.current 1
           li #[a(href="#", aria-label="Page 2") 2]
           li #[a(href="#", aria-label="Page 3") 3]
           li #[a(href="#", aria-label="Page 4") 4]

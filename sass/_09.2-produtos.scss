@@ -52,3 +52,33 @@
     margin-bottom: 2rem;
   }
 }
+
+// SINGLE PRODUTO
+.single-product{
+  .product{
+    .images{
+      width: calc(100% - 80px);
+      float:right;
+      padding-left: 10px;
+      img{
+        width: 100%;
+      }
+    }
+    .product-thumbnails{
+      width: 80px;
+      float: left;
+      .img-thumbnail{
+        margin-bottom: 10px;
+        border: 1px solid lighten($preto, 85%);
+      }
+    }
+  }
+  p.price{
+    font-size: 3rem;
+    font-family: $titilium;
+    font-weight: bold;
+  }
+  #produto-features-view{
+    background: $preto;
+  }
+}

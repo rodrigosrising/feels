@@ -1,0 +1,33 @@
+doctype
+html(class="no-js", lang="pt-BR", dir="ltr")
+
+  head
+    include includes/head
+    //css
+
+  body.single-product
+    div(class="off-canvas position-left", id="offCanvasLeft", data-off-canvas)
+      //Menu
+      include includes/off-canvas-menu
+
+    div(class="off-canvas-content", data-off-canvas-content)
+      //header
+      include includes/header
+      //header
+      //main
+      main.main
+        div#breadcrumbs
+          include includes/breadcrumb
+        section#produto.section-wrapper-small
+          include includes/produto-view
+        section#produto-features-view.section-wrapper
+          include includes/produto-features-view
+        section#produtos-destaques.section-wrapper
+          include includes/produtos-destaques
+      //main
+      //footer
+      include includes/footer
+      //footer
+    //scripts
+    include includes/foot
+    //scripts

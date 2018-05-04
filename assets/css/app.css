@@ -430,7 +430,19 @@ h6 {
 }
 
 .section-wrapper {
-  padding: 3rem 0;
+  padding: 2rem 0 3rem;
+}
+
+.section-wrapper-small {
+  padding: 2rem 0;
+}
+
+#breadcrumbs {
+  padding: 3rem 0 0;
+}
+
+#breadcrumbs .breadcrumbs {
+  margin-bottom: 0;
 }
 
 .destaque-bg {
@@ -556,6 +568,44 @@ h6 {
   margin-bottom: 2rem;
 }
 
+.single-product .product .images {
+  width: calc(100% - 80px);
+  float: right;
+  padding-left: 10px;
+}
+
+.single-product .product .images img {
+  width: 100%;
+}
+
+.single-product .product .product-thumbnails {
+  width: 80px;
+  float: left;
+}
+
+.single-product .product .product-thumbnails .img-thumbnail {
+  margin-bottom: 10px;
+  border: 1px solid #d9d9d9;
+}
+
+.single-product p.price {
+  font-size: 3rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+}
+
+.single-product #produto-features-view {
+  background: #000;
+}
+
+.pagination {
+  padding: 3rem 0 1rem;
+}
+
+.pagination .current {
+  background: #000;
+}
+
 #contato-home {
   position: relative;
   background: #000;
@@ -573,8 +623,9 @@ h6 {
 
 #contato-home .contato-info-wrapper {
   position: absolute;
-  top: 1rem;
+  top: 0;
   width: 100%;
+  padding: 1rem 0;
 }
 
 #contato-home .info-contato {

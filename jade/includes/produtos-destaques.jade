@@ -3,13 +3,13 @@
 //- PRODUCT MIXING
 mixin product(title, price, img)
   div.produto
-    a(href="")
+    a(href="produto.html")
       img(src="#{image}#{img}", alt="#{title}")
     div.descricao-produto
       h4
-        a(href="")  #{title}
+        a(href="produto.html")  #{title}
       p.price R$ #{price}
-      a(href="", class="button") Comprar
+      a(href="produto.html", class="button") Comprar
 
 div.grid-container
   div.grid-x.grid-padding-x
