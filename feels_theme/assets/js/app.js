@@ -1,6 +1,11 @@
 jQuery(function ($) {
   $(document).foundation();
 
+  $(".header-quickcart").hide();
+	$(".cart-contents").click(function(){
+		$(".header-quickcart").slideToggle(350);
+	});
+
   $('.owl-home-slides').owlCarousel({
     items:1,
     loop:true,

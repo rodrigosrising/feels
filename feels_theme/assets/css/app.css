@@ -4,7 +4,6 @@ html {
   background: #FFF;
   color: #484848;
   height: 100%;
-  overflow-x: hidden;
 }
 
 /*==========================NOVO=============================*/
@@ -332,6 +331,98 @@ h6 {
   display: block;
 }
 
+.header .cart-contents {
+  position: relative;
+  padding: 0.7rem 0.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.header .cart-contents .item-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #000;
+  color: #FFF;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.header .header-quickcart {
+  position: absolute;
+  width: 300px;
+  top: 44px;
+  right: 0;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  z-index: 99;
+  padding: 1rem;
+}
+
+.header .header-quickcart .woocommerce-mini-cart {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  float: left;
+}
+
+.header .header-quickcart .woocommerce-mini-cart li {
+  float: left;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 0.5rem 0;
+}
+
+.header .header-quickcart .woocommerce-mini-cart li .remove_from_cart_button {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  background: #000;
+  color: #FFF;
+  padding: 2px 6px 1px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.header .header-quickcart .woocommerce-mini-cart li a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+.header .header-quickcart .woocommerce-mini-cart li img {
+  width: 75px;
+  float: right;
+}
+
+.header .header-quickcart .total {
+  margin: 0;
+  padding: 0.5rem;
+  clear: both;
+}
+
+.header .header-quickcart .total .amount {
+  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.header .header-quickcart .buttons {
+  margin: 0;
+}
+
+.header .header-quickcart .buttons .button {
+  margin-bottom: 0.5rem;
+}
+
+.header .header-quickcart .buttons .button:focus,
+.header .header-quickcart .buttons .button:hover {
+  background: #484848;
+  color: #FFF;
+}
+
 .nav-container {
   font-size: 0.9rem;
 }
@@ -414,6 +505,7 @@ h6 {
 
 .banner-wrapper {
   position: relative;
+  overflow-x: hidden;
 }
 
 .banner-wrapper .owl-home-slides .owl-dots {
@@ -581,20 +673,6 @@ h6 {
   width: 50%;
 }
 
-.lista-produtos span.onsale,
-.owl-produtos-destaques span.onsale {
-  position: absolute;
-  background: #000;
-  color: #FFF;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
-  right: -32px;
-  top: 20px;
-  width: 150px;
-  text-align: center;
-  z-index: 1;
-}
-
 .lista-produtos .product,
 .owl-produtos-destaques .product {
   position: relative;
@@ -621,8 +699,8 @@ h6 {
   padding: 0.7rem;
 }
 
-.lista-produtos .product .descricao-produto h4,
-.owl-produtos-destaques .product .descricao-produto h4 {
+.lista-produtos .product .descricao-produto h2,
+.owl-produtos-destaques .product .descricao-produto h2 {
   font-size: 0.9rem;
   text-transform: uppercase;
 }
@@ -653,24 +731,61 @@ h6 {
   margin-bottom: 2rem;
 }
 
+span.onsale {
+  position: absolute;
+  background: #000;
+  color: #FFF;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  right: -32px;
+  top: 20px;
+  width: 150px;
+  text-align: center;
+  z-index: 1;
+}
+
+.single-product .product {
+  position: relative;
+  overflow: hidden;
+}
+
 .single-product .product .images {
-  width: calc(100% - 80px);
+  position: relative;
+}
+
+.single-product .product .images .flex-viewport {
+  width: calc(100% - 90px);
   float: right;
-  padding-left: 10px;
+  margin-left: 10px;
+  border: 1px solid #d9d9d9;
+}
+
+.single-product .product .images .woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
 }
 
 .single-product .product .images img {
   width: 100%;
 }
 
-.single-product .product .product-thumbnails {
+.single-product .product .flex-control-thumbs {
   width: 80px;
   float: left;
+  list-style: none;
+  margin: 0;
 }
 
-.single-product .product .product-thumbnails .img-thumbnail {
+.single-product .product .flex-control-thumbs li {
   margin-bottom: 10px;
   border: 1px solid #d9d9d9;
+}
+
+.single-product h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
 }
 
 .single-product p.price {
@@ -689,6 +804,17 @@ h6 {
 
 .pagination .current {
   background: #000;
+}
+
+.sidebar h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.sidebar li a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 #contato-home {

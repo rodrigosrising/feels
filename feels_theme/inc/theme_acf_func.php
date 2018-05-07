@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*-------------------------------------------------------------------------*/
 /*  ACF PRO OPTIONS
 /*-------------------------------------------------------------------------*/
@@ -55,27 +55,27 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title' 	=> 'Opções do Tema',
 		'redirect' 		=> true
 		));
-	
-	
+
+
 	// add sub page
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Banners',
 		'menu_title' 	=> 'Banners',
 		'parent_slug' 	=> $parent['menu_slug'],
 		));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Redes Sociais',
 		'menu_title' 	=> 'Redes Sociais',
 		'parent_slug' 	=> $parent['menu_slug'],
 		));
-	
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Informações da loja',
 		'menu_title' 	=> 'Informações da loja',
 		'parent_slug' 	=> $parent['menu_slug'],
 		));
-	
+
 }
 
 /*SLIDES*/
@@ -681,287 +681,3 @@ acf_add_local_field_group(array (
 
 endif;
 /*END INFO LOJA*/
-
-
-// if( function_exists('acf_add_local_field_group') ):
-
-// acf_add_local_field_group(array (
-// 	'key' => 'group_5a26a6bb051fd',
-// 	'title' => 'Onde Encontrar uFrog',
-// 	'fields' => array (
-// 		array (
-// 			'key' => 'field_5a26a6e1190ec',
-// 			'label' => 'Locais',
-// 			'name' => 'locais',
-// 			'type' => 'repeater',
-// 			'instructions' => '',
-// 			'required' => 0,
-// 			'conditional_logic' => 0,
-// 			'wrapper' => array (
-// 				'width' => '',
-// 				'class' => '',
-// 				'id' => '',
-// 			),
-// 			'collapsed' => 'field_5a26a6ff190ed',
-// 			'min' => 0,
-// 			'max' => 0,
-// 			'layout' => 'row',
-// 			'button_label' => 'Adicionar Estado',
-// 			'sub_fields' => array (
-// 				array (
-// 					'key' => 'field_5a26a6ff190ed',
-// 					'label' => 'Estado',
-// 					'name' => 'estado',
-// 					'type' => 'text',
-// 					'instructions' => '',
-// 					'required' => 1,
-// 					'conditional_logic' => 0,
-// 					'wrapper' => array (
-// 						'width' => '',
-// 						'class' => '',
-// 						'id' => '',
-// 					),
-// 					'default_value' => '',
-// 					'placeholder' => '',
-// 					'prepend' => '',
-// 					'append' => '',
-// 					'maxlength' => '',
-// 				),
-// 				array (
-// 					'key' => 'field_5a26a738190ee',
-// 					'label' => 'Informação do local',
-// 					'name' => 'informacao_do_local',
-// 					'type' => 'repeater',
-// 					'instructions' => '',
-// 					'required' => 0,
-// 					'conditional_logic' => 0,
-// 					'wrapper' => array (
-// 						'width' => '',
-// 						'class' => '',
-// 						'id' => '',
-// 					),
-// 					'collapsed' => '',
-// 					'min' => 0,
-// 					'max' => 0,
-// 					'layout' => 'table',
-// 					'button_label' => 'Adicionar local',
-// 					'sub_fields' => array (
-// 						array (
-// 							'key' => 'field_5a26a776190ef',
-// 							'label' => 'Cidade',
-// 							'name' => 'cidade',
-// 							'type' => 'text',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'default_value' => '',
-// 							'placeholder' => '',
-// 							'prepend' => '',
-// 							'append' => '',
-// 							'maxlength' => '',
-// 						),
-// 						array (
-// 							'key' => 'field_5a26a785190f0',
-// 							'label' => 'Loja',
-// 							'name' => 'loja',
-// 							'type' => 'text',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'default_value' => '',
-// 							'placeholder' => '',
-// 							'prepend' => '',
-// 							'append' => '',
-// 							'maxlength' => '',
-// 						),
-// 						array (
-// 							'key' => 'field_5a26a78c190f1',
-// 							'label' => 'Endereço',
-// 							'name' => 'endereco',
-// 							'type' => 'text',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'default_value' => '',
-// 							'placeholder' => '',
-// 							'prepend' => '',
-// 							'append' => '',
-// 							'maxlength' => '',
-// 						),
-// 						array (
-// 							'key' => 'field_5a26a79b190f2',
-// 							'label' => 'Bairro',
-// 							'name' => 'bairro',
-// 							'type' => 'text',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'default_value' => '',
-// 							'placeholder' => '',
-// 							'prepend' => '',
-// 							'append' => '',
-// 							'maxlength' => '',
-// 						),
-// 						array (
-// 							'key' => 'field_5a26a7a4190f3',
-// 							'label' => 'Telefone',
-// 							'name' => 'telefone',
-// 							'type' => 'text',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'default_value' => '',
-// 							'placeholder' => '',
-// 							'prepend' => '',
-// 							'append' => '',
-// 							'maxlength' => '',
-// 						),
-// 					),
-// 				),
-// 			),
-// 		),
-// 	),
-// 	'location' => array (
-// 		array (
-// 			array (
-// 				'param' => 'page_template',
-// 				'operator' => '==',
-// 				'value' => 'template-onde-encontrar.php',
-// 			),
-// 		),
-// 	),
-// 	'menu_order' => 0,
-// 	'position' => 'normal',
-// 	'style' => 'default',
-// 	'label_placement' => 'top',
-// 	'instruction_placement' => 'label',
-// 	'hide_on_screen' => array (
-// 		0 => 'the_content',
-// 		1 => 'custom_fields',
-// 		2 => 'discussion',
-// 		3 => 'comments',
-// 		4 => 'revisions',
-// 	),
-// 	'active' => 1,
-// 	'description' => '',
-// ));
-
-// endif;
-
-/*ESTAMPAS*/
-if( function_exists('acf_add_local_field_group') ):
-
-acf_add_local_field_group(array (
-	'key' => 'group_5a31150720699',
-	'title' => 'Estampas',
-	'fields' => array (
-		array (
-			'key' => 'field_5a31150e2475b',
-			'label' => 'Estampas',
-			'name' => 'estampas',
-			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'collapsed' => '',
-			'min' => 0,
-			'max' => 0,
-			'layout' => 'table',
-			'button_label' => 'Adicionar estampa',
-			'sub_fields' => array (
-				array (
-					'key' => 'field_5a3115492475c',
-					'label' => 'Imagem',
-					'name' => 'imagem',
-					'type' => 'image',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'return_format' => 'array',
-					'preview_size' => 'thumbnail',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
-				),
-				array (
-					'key' => 'field_5a31155d2475d',
-					'label' => 'Nome da Estampa',
-					'name' => 'nome_da_estampa',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-				),
-			),
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'template-estampas.php',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => 1,
-	'description' => '',
-));
-
-endif;

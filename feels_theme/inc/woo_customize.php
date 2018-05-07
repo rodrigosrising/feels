@@ -16,17 +16,36 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
 // Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
+add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
+
 	ob_start();
 	?>
-	<div class="cart-itens"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></div>
-	<?php
 
-	$fragments['div.cart-itens'] = ob_get_clean();
+	<div class="cart-contents">
+		<i class="fas fa-shopping-bag"></i>
+		<span class="item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+	</div>
+
+	<?php $fragments['div.cart-contents'] = ob_get_clean();
 
 	return $fragments;
-}
+
+} );
+
+add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
+
+	ob_start();
+	?>
+
+	<div class="header-quickcart">
+			<?php woocommerce_mini_cart(); ?>
+	</div>
+
+	<?php $fragments['div.header-quickcart'] = ob_get_clean();
+
+	return $fragments;
+
+} );
 
 /*custom excerpt*/
 remove_action( 'woocommerce_after_shop_loop_item_title', 'my_custom_excerpt', 15 );
@@ -87,7 +106,7 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 add_action( 'woocommerce_after_shop_loop', 'custom_pagination', 10 );
 function custom_pagination(){
-	echo '<div class="row"><div class="small-12 columns">';
+	echo '<div class="grid-x"><div class="small-12 cell">';
 	bfc_custom_post_navigation();
 	echo '</div></div>';
 }
@@ -108,14 +127,14 @@ add_action( 'woocommerce_single_product_summary', 'the_content', 20 );
 /*BREADCRUMB*/
 add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
 function jk_woocommerce_breadcrumbs() {
-    return array(
-            'delimiter'   => '',
-            'wrap_before' => '<nav aria-label="Você está em:" role="navigation" class="float-right" itemprop="breadcrumb"><ul class="breadcrumbs">',
-            'wrap_after'  => '</ul></nav>',
-            'before'      => '<li>',
-            'after'       => '</li>',
-            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-        );
+	return array(
+		'delimiter'   => '',
+		'wrap_before' => '<nav aria-label="Você está em:" role="navigation" itemprop="breadcrumb"><ul class="breadcrumbs">',
+		'wrap_after'  => '</ul></nav>',
+		'before'      => '<li>',
+		'after'       => '</li>',
+		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+	);
 }
 
 // add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'mmx_remove_select_text');
@@ -196,88 +215,3 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	$sortby['price-desc'] = 'Maior Preço';
 	return $sortby;
 }
-
-
-///////////////////////////////////
-// WOOCOOMERCE ORDER STATUS
-////////////////////////////
-
-function wc_renaming_order_status( $order_statuses ) {
-	foreach ( $order_statuses as $key => $status ) {
-		$new_order_statuses[ $key ] = $status;
-		if ( 'wc-completed' === $key ) {
-			$order_statuses['wc-completed'] = _x( 'Entregue', 'Order status', 'woocommerce' );
-		}
-		if ( 'wc-processing' === $key ) {
-			$order_statuses['wc-processing'] = _x( 'Separado', 'Order status', 'woocommerce' );
-		}
-		if ( 'wc-on-hold' === $key ) {
-			$order_statuses['wc-on-hold'] = _x( 'Aguardando Pagamento', 'Order status', 'woocommerce' );
-		}
-	}
-	return $order_statuses;
-}
-add_filter( 'wc_order_statuses', 'wc_renaming_order_status' );
-
-// Rename order status 'Completed' to 'Order Received' in admin main view - different hook, different value than the other places
-function wc_rename_order_status_type( $order_statuses ) {
-    foreach ( $order_statuses as $key => $status ) {
-        $new_order_statuses[ $key ] = $status;
-        if ( 'wc-completed' === $key ) {
-           $order_statuses['wc-completed']['label_count'] = _n_noop( 'Entregue <span class="count">(%s)</span>', 'Entregue <span class="count">(%s)</span>', 'woocommerce' );
-        }
-        if ( 'wc-processing' === $key ) {
-           $order_statuses['wc-processing']['label_count'] = _n_noop( 'Separado <span class="count">(%s)</span>', 'Separado <span class="count">(%s)</span>', 'woocommerce' );
-        }
-        if ( 'wc-on-hold' === $key ) {
-           $order_statuses['wc-on-hold']['label_count'] = _n_noop( 'Aguardando Pagamento <span class="count">(%s)</span>', 'Aguardando Pagamento <span class="count">(%s)</span>', 'woocommerce' );
-        }
-    }
-    return $order_statuses;
-}
-add_filter( 'woocommerce_register_shop_order_post_statuses', 'wc_rename_order_status_type' );
-
-//////////////////////////////
-// NOVO STATUS - ENVIADO
-//////////////////////
-
-
-function register_enviado_order_status() {
-    register_post_status( 'wc-enviado', array(
-        'label'                     => 'Enviado',
-        'public'                    => true,
-        'show_in_admin_status_list' => true,
-        'show_in_admin_all_list'    => true,
-        'exclude_from_search'       => false,
-        'label_count'               => _n_noop( 'Enviado <span class="count">(%s)</span>', 'Enviado <span class="count">(%s)</span>' )
-    ) );
-}
-add_action( 'init', 'register_enviado_order_status' );
-
-function add_awaiting_shipment_to_order_statuses( $order_statuses ) {
-
-    $new_order_statuses = array();
-
-    foreach ( $order_statuses as $key => $status ) {
-
-        $new_order_statuses[ $key ] = $status;
-
-        if ( 'wc-processing' === $key ) {
-            $new_order_statuses['wc-enviado'] = 'Enviado';
-        }
-    }
-
-    return $new_order_statuses;
-}
-add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
-
-function wc_order_status_styling() {
- echo '<style>
-.order-status.status-enviado {
-    background: #084c82;
-    color: #FFEB3B;
-}
-</style>';
-}
-
-add_action('admin_head', 'wc_order_status_styling');

