@@ -1,0 +1,200 @@
+.owl-produtos-destaques{
+  .owl-nav{
+    position: absolute;
+    width: 100%;
+    top: 33%;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    button[class*='owl-']{
+      background: $branco!important;
+      border-radius: 0!important;
+      padding: 0.2rem 0.5rem!important;
+      &:hover, &:focus{
+        color: $preto;
+      }
+    }
+    .owl-prev{
+      left: 0;
+    }
+  }
+}
+
+.lista-produtos, .owl-produtos-destaques{
+  .products{
+    display: flex; /* or inline-flex */
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0; padding: 0;
+  }
+  .columns-1, .columns-2, .columns-3, .columns-4{
+    .product{
+      width: 100%;
+    }
+  }
+  .columns-5{
+    .product{
+      width: 50%;
+    }
+  }
+  /* Medium and up */
+  @media screen and (min-width: 40em) {
+    .columns-1{
+      .product{
+        width: 100%;
+      }
+    }
+    .columns-2{
+      .product{
+        width: 50%;
+      }
+    }
+    .columns-3{
+      .product{
+        width: 50%;
+      }
+    }
+    .columns-4{
+      .product{
+        width: 33.3334%;
+      }
+    }
+    .columns-5{
+      .product{
+        width: 33.3334%;
+      }
+    }
+  }
+  /* Large and up */
+  @media screen and (min-width: 64em) {
+    .columns-1{
+      .product{
+        width: 100%;
+      }
+    }
+    .columns-2{
+      .product{
+        width: 50%;
+      }
+    }
+    .columns-3{
+      .product{
+        width: 33.3334%;
+      }
+    }
+    .columns-4{
+      .product{
+        width: 25%;
+      }
+    }
+    .columns-5{
+      .product{
+        width: 20%;
+      }
+    }
+  }
+  .product{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $branco;
+    list-style: none;
+    img{
+      width: 100%;
+      filter: brightness(100%);
+    }
+    &:hover{
+      img{
+        filter: brightness(102%);
+      }
+    }
+    .descricao-produto{
+      padding: 0.7rem;
+      h2{
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+      .price{
+        font-family: $titilium;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: $preto;
+        del{
+          color: $texto;
+          font-size: 0.9rem;
+          font-weight: 400;
+        }
+        ins{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .filter-box{
+    border-bottom: 1px solid $preto;
+    margin-bottom: 2rem;
+  }
+}
+
+span.onsale{
+  position: absolute;
+  background: $preto;
+  color: $branco;
+  transform: rotate(43deg);
+  right: -30px;
+  top: 30px;
+  width: 150px;
+  text-align: center;
+  z-index: 1;
+}
+
+// SINGLE PRODUTO
+.single-product{
+  .product{
+    position: relative;
+    overflow: hidden;
+    .images{
+      position: relative;
+      .flex-viewport{
+        width: calc(100% - 90px);
+        float:right;
+        margin-left: 10px;
+        border: 1px solid lighten($preto, 85%);
+      }
+      .woocommerce-product-gallery__trigger{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .flex-control-thumbs{
+      width: 80px;
+      float: left;
+      list-style: none;
+      margin: 0;
+      li{
+        margin-bottom: 10px;
+        border: 1px solid lighten($preto, 85%);
+      }
+    }
+  }
+  .summary{
+    position: relative;
+    overflow: hidden;
+  }
+  h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+  }
+  p.price{
+    font-size: 3rem;
+    font-family: $titilium;
+    font-weight: bold;
+  }
+  #produto-features-view{
+    background: $preto;
+  }
+}

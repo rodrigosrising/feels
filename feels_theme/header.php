@@ -70,32 +70,13 @@
 		<!--header-->
 
 		<?php if (!is_front_page()): ?>
-		<!--banner-->
-		<div class="banner-wrapper">
-			<div class="grid-container social-media-container show-for-medium">
-				<div class="grid-x">
-					<div class="cell small-12">
-						<ul class="menu social-media">
-							<li><a href=""><i class="fab fa-instagram"></i></a></li>
-							<li><a href=""><i class="fab fa-facebook"></i></a></li>
-							<li><a href=""><i class="fab fa-pinterest"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="grid-container fluid full">
-				<div class="grid-x">
-					<div style="background-image: url(<?php echo get_theme_file_uri( '/assets/img/destaque-full.jpg' ) ?>);" class="cell banner-interno"></div>
-				</div>
-			</div>
-		</div>
-		<!--banner-->
+			<?php  get_template_part( 'content-banner-page' ); ?>
 		<?php endif; ?>
 
 		<?php if (!is_front_page()): ?>
 		<div id="breadcrumbs">
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x grid-margin-x">
+				<div class="grid-x grid-padding-x">
 					<div class="cell small-12">
 						<?php woocommerce_breadcrumb(); ?>
 					</div>

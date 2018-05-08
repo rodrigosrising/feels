@@ -37,9 +37,15 @@
 					</ul>
 					<h4>Mídias Sociais
 						<ul class="menu social-media social-media-footer">
-							<li><a href=""><i class="fab fa-instagram"></i></a></li>
-							<li><a href=""><i class="fab fa-facebook"></i></a></li>
-							<li><a href=""><i class="fab fa-pinterest"></i></a></li>
+						<?php if( get_field('instagram', 'option') ): ?>
+							<li><a href="<?php the_field('instagram', 'option'); ?>"><i class="fab fa-instagram"></i></a></li>
+						<?php endif; ?>
+						<?php if( get_field('facebook', 'option') ): ?>
+							<li><a href="<?php the_field('facebook', 'option'); ?>"><i class="fab fa-facebook"></i></a></li>
+						<?php endif; ?>
+						<?php if( get_field('pinterest', 'option') ): ?>
+							<li><a href="<?php the_field('pinterest', 'option'); ?>"><i class="fab fa-pinterest"></i></a></li>
+						<?php endif; ?>
 						</ul>
 					</h4>
 				</div>

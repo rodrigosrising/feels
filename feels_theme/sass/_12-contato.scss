@@ -1,0 +1,99 @@
+#contato-home{
+  position: relative;
+  .contato-box{
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 400px;
+    height: 50vh;
+  }
+  .contato-info-wrapper{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  background: $preto;
+  .info-contato{
+    background: $preto;
+    display: block;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    border-top: 2px solid $branco;
+    width: 100%;
+    h2{
+      color: $branco;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    .info-contato-tel{
+      font-family: $titilium;
+      color: $branco;
+      font-size: 1.4rem;
+      line-height: 3.5rem;
+      display: inline-block;
+      float: right;
+    }
+    .social-media{
+      float: right;
+      a{
+        color: $branco;
+        font-size: 2rem;
+      }
+    }
+  }
+  .contact-form{
+    [type='text'],
+    [type='password'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='week'],
+    [type='email'],
+    [type='number'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='url'],
+    [type='color']{
+      background: $preto;
+      border: 1px solid $branco;
+      border-top: 1px solid $preto;
+      text-shadow: none;
+      color: $branco;
+      // padding: 1.3rem 0.5rem;
+      margin: 1rem 0;
+    }
+    textarea{
+      background: $preto;
+      border: 1px solid $branco;
+      border-top: 1px solid $preto;
+      text-shadow: none;
+      color: $branco;
+      margin: 1rem 0;
+      min-height: 150px;
+      height: 150px;
+    }
+    [type='text']:focus,
+    [type='password']:focus,
+    [type='date']:focus,
+    [type='datetime']:focus,
+    [type='datetime-local']:focus,
+    [type='month']:focus,
+    [type='week']:focus,
+    [type='email']:focus,
+    [type='number']:focus,
+    [type='search']:focus,
+    [type='tel']:focus,
+    [type='time']:focus,
+    [type='url']:focus,
+    [type='color']:focus,
+    textarea:focus {
+      border-color: transparent;
+      background-color: darken($texto, 20%);
+      box-shadow: none;
+    }
+  }
+}

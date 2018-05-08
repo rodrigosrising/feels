@@ -1,0 +1,40 @@
+.section-wrapper{
+  padding: 2rem 0 3rem;
+}
+.section-wrapper-small{
+  padding: 2rem 0;
+}
+#breadcrumbs{
+  padding: 3rem 0 0;
+  .breadcrumbs{
+    margin-bottom: 0;
+  }
+}
+
+// ADMIN
+.section-wrapper-login{
+  padding-bottom: 0;
+  .login-wrapper{
+    padding: 5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .grid-login{
+      background: rgba($cor, 0.8);
+      padding: 3rem 1rem;
+      a, span{
+        color: $branco;
+      }
+      .cell{
+        padding: 1rem 6rem;
+        &:first-child{
+          border-right: 1px solid $branco;
+        }
+      }
+      h2{
+        color: $branco;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

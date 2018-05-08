@@ -341,9 +341,10 @@ h6 {
 .header .cart-contents .item-count {
   position: absolute;
   top: 0;
-  right: 0;
-  background: #000;
+  right: -7px;
+  background: #ff5140;
   color: #FFF;
+  border: 1px solid #000;
   padding: 2px 5px;
   border-radius: 50%;
 }
@@ -503,6 +504,15 @@ h6 {
 
 /* Medium and up */
 
+.breadcrumbs a {
+  color: #ff5140;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+  color: #000;
+}
+
 .banner-wrapper {
   position: relative;
   overflow-x: hidden;
@@ -550,6 +560,40 @@ h6 {
 
 #breadcrumbs .breadcrumbs {
   margin-bottom: 0;
+}
+
+.section-wrapper-login {
+  padding-bottom: 0;
+}
+
+.section-wrapper-login .login-wrapper {
+  padding: 5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-wrapper-login .login-wrapper .grid-login {
+  background: rgba(255, 81, 64, 0.8);
+  padding: 3rem 1rem;
+}
+
+.section-wrapper-login .login-wrapper .grid-login a,
+.section-wrapper-login .login-wrapper .grid-login span {
+  color: #FFF;
+}
+
+.section-wrapper-login .login-wrapper .grid-login .cell {
+  padding: 1rem 6rem;
+}
+
+.section-wrapper-login .login-wrapper .grid-login .cell:first-child {
+  border-right: 1px solid #FFF;
+}
+
+.section-wrapper-login .login-wrapper .grid-login h2 {
+  color: #FFF;
+  text-transform: uppercase;
 }
 
 .destaque-bg {
@@ -735,10 +779,10 @@ span.onsale {
   position: absolute;
   background: #000;
   color: #FFF;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
-  right: -32px;
-  top: 20px;
+  -webkit-transform: rotate(43deg);
+  transform: rotate(43deg);
+  right: -30px;
+  top: 30px;
   width: 150px;
   text-align: center;
   z-index: 1;
@@ -783,6 +827,11 @@ span.onsale {
   border: 1px solid #d9d9d9;
 }
 
+.single-product .summary {
+  position: relative;
+  overflow: hidden;
+}
+
 .single-product h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -815,6 +864,21 @@ span.onsale {
 .sidebar li a {
   text-transform: uppercase;
   font-size: 0.9rem;
+}
+
+.sidebar-content .widget-area li a {
+  padding: 0;
+}
+
+.sidebar-content .widget-area li ul {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  display: block;
+  list-style: none;
+}
+
+.sidebar-content .widget-area li ul li a {
+  display: inline;
 }
 
 #contato-home {

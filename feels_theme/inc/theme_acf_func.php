@@ -59,6 +59,12 @@ if( function_exists('acf_add_options_page') ) {
 
 	// add sub page
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Home',
+		'menu_title' 	=> 'Home',
+		'parent_slug' 	=> $parent['menu_slug'],
+		));
+
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Banners',
 		'menu_title' 	=> 'Banners',
 		'parent_slug' 	=> $parent['menu_slug'],
@@ -300,198 +306,6 @@ acf_add_local_field_group(array (
 endif;
 /*END REDES SOCIAIS*/
 
-/*DESTAQUES*/
-if( function_exists('acf_add_local_field_group') ):
-
-acf_add_local_field_group(array (
-	'key' => 'group_597f2ef88c4a0',
-	'title' => 'Destaques Menores Home',
-	'fields' => array (
-		array (
-			'key' => 'field_597f2f2c29b23',
-			'label' => 'Destaques',
-			'name' => 'destaques',
-			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'collapsed' => '',
-			'min' => 3,
-			'max' => 3,
-			'layout' => 'table',
-			'button_label' => '',
-			'sub_fields' => array (
-				array (
-					'key' => 'field_597f342429b24',
-					'label' => 'Imagem Destaque',
-					'name' => 'imagem_destaque',
-					'type' => 'image',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'return_format' => 'array',
-					'preview_size' => 'thumbnail',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
-				),
-				array (
-					'key' => 'field_597f344329b25',
-					'label' => 'Link Destaque',
-					'name' => 'link_destaque',
-					'type' => 'url',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-				),
-			),
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'options_page',
-				'operator' => '==',
-				'value' => 'acf-options-banners',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => 1,
-	'description' => '',
-));
-
-endif;
-/*END DESTAQUES*/
-
-/*FAQ*/
-if( function_exists('acf_add_local_field_group') ):
-
-acf_add_local_field_group(array (
-	'key' => 'group_5981e8cb6dedc',
-	'title' => 'Dúvidas Frequentes',
-	'fields' => array (
-		array (
-			'key' => 'field_5981e8d86050b',
-			'label' => 'Dúvidas',
-			'name' => 'duvidas_frequentes',
-			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'collapsed' => '',
-			'min' => 0,
-			'max' => 0,
-			'layout' => 'row',
-			'button_label' => 'Adicionar dúvida',
-			'sub_fields' => array (
-				array (
-					'key' => 'field_5981e8f76050c',
-					'label' => 'Pergunta',
-					'name' => 'pergunta',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-				),
-				array (
-					'key' => 'field_5981e9126050d',
-					'label' => 'Resposta',
-					'name' => 'resposta',
-					'type' => 'wysiwyg',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'tabs' => 'all',
-					'toolbar' => 'full',
-					'media_upload' => 1,
-					'delay' => 0,
-				),
-			),
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'template-duvidas.php',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
-		0 => 'the_content',
-		1 => 'excerpt',
-		2 => 'custom_fields',
-		3 => 'discussion',
-		4 => 'comments',
-		5 => 'revisions',
-		6 => 'author',
-		7 => 'format',
-		8 => 'page_attributes',
-		9 => 'categories',
-		10 => 'tags',
-		11 => 'send-trackbacks',
-	),
-	'active' => 1,
-	'description' => '',
-));
-
-endif;
-/*END FAQ*/
 /*INFO LOJA*/
 if( function_exists('acf_add_local_field_group') ):
 
@@ -522,25 +336,6 @@ acf_add_local_field_group(array (
 			'key' => 'field_59820251b4087',
 			'label' => 'Telefone 1',
 			'name' => 'telefone_1',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array (
-			'key' => 'field_5982025bb4088',
-			'label' => 'Telefone 2',
-			'name' => 'telefone_2',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
@@ -639,25 +434,6 @@ acf_add_local_field_group(array (
 			'toolbar' => 'full',
 			'media_upload' => 0,
 			'delay' => 0,
-		),
-		array (
-			'key' => 'field_5982036b0aa0a',
-			'label' => 'Texto Copyrights',
-			'name' => 'texto_copyrights',
-			'type' => 'text',
-			'instructions' => 'Não inserir a data.',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
 		),
 	),
 	'location' => array (

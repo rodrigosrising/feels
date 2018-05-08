@@ -1,0 +1,33 @@
+.sidebar{
+  h3{
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: $titilium;
+  }
+  li{
+    a{
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+  }
+}
+.sidebar-content{
+  .widget-area{
+    li{
+      a{
+        padding: 0;
+      }
+      ul{
+        margin-bottom: 1rem;
+        margin-left: 0;
+        display: block;
+        list-style: none;
+        li{
+          a{
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

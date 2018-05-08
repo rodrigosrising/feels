@@ -1,0 +1,98 @@
+.header{
+  background: $branco;
+  .logo-bg{
+    background: $preto;
+    position: relative;
+    padding: 0.9rem;
+    &:after{
+      content: "";
+      position: absolute;
+      background: $preto;
+      height: 100%;
+      width: 1000em;
+      top: 0;
+      right: 100%;
+      display: block;
+    }
+  }
+  .cart-contents{
+    position: relative;
+    padding: 0.7rem 0.5rem;
+    cursor: pointer;
+    line-height: 1;
+    .item-count{
+      position: absolute;
+      top: 0;
+      right: -7px;
+      background: $cor;
+      color: $branco;
+      border: 1px solid $preto;
+      padding: 2px 5px;
+      border-radius: 50%;
+    }
+  }
+  .header-quickcart {
+    position: absolute;
+    // display: none;
+    width: 300px;
+    top: 44px;
+    right: 0;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    z-index: 99;
+    padding: 1rem;
+    .woocommerce-mini-cart{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      float: left;
+      li{
+        float: left;
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 0.5rem 0;
+        .remove_from_cart_button{
+          position: absolute;
+          top: 2px;
+          right: 0;
+          background: $preto;
+          color: $branco;
+          padding: 2px 6px 1px;
+          border-radius: 50%;
+          font-weight: bold;
+          font-size: 1rem;
+        }
+        a{
+          font-size: 0.9rem;
+          font-weight: 400;
+          padding: 0;
+        }
+        img{
+          width: 75px;
+          float: right;
+        }
+      }
+    }
+    .total{
+      margin: 0;
+      padding: 0.5rem;
+      clear: both;
+      .amount{
+        font-weight: bold;
+        font-family: $titilium;
+      }
+    }
+    .buttons{
+      margin: 0;
+      .button{
+        margin-bottom: 0.5rem;
+        &:focus, &:hover{
+          background: $texto;
+          color: $branco;
+        }
+      }
+    }
+  }
+}
