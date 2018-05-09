@@ -555,11 +555,22 @@ h6 {
 }
 
 #breadcrumbs {
-  padding: 3rem 0 0;
+  padding: 1rem 0;
+  background: black;
+  color: #FFF;
 }
 
 #breadcrumbs .breadcrumbs {
   margin-bottom: 0;
+}
+
+#breadcrumbs .breadcrumbs li {
+  color: #FFF;
+  font-weight: 600;
+}
+
+#breadcrumbs .breadcrumbs li a {
+  font-weight: 400;
 }
 
 .section-wrapper-login {
@@ -840,11 +851,56 @@ span.onsale {
 .single-product p.price {
   font-size: 3rem;
   font-family: "Titillium Web", sans-serif;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.single-product .stock {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
 }
 
 .single-product #produto-features-view {
   background: #000;
+}
+
+table.variations tbody,
+table.variations thead,
+table.variations tfoot {
+  border: none;
+}
+
+table.variations tbody tr:nth-child(even),
+table.variations thead tr:nth-child(even),
+table.variations tfoot tr:nth-child(even) {
+  background: none;
+}
+
+table.variations .label {
+  background: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+table.variations .label label {
+  font-size: 1rem;
+  line-height: 3;
+  font-weight: 600;
+  color: #484848;
+  font-family: "Titillium Web", sans-serif;
+}
+
+table.variations .value {
+  width: 100%;
+}
+
+table.variations .tawcvs-swatches .swatch {
+  border-radius: 0;
+  margin-right: 5px;
+}
+
+table.variations .tawcvs-swatches .swatch-label {
+  border: 1px solid #aeaeae;
+  color: #484848;
 }
 
 .pagination {
@@ -866,19 +922,107 @@ span.onsale {
   font-size: 0.9rem;
 }
 
-.sidebar-content .widget-area li a {
-  padding: 0;
+.price_slider_wrapper .ui-slider {
+  position: relative;
+  text-align: left;
+  margin: 1rem 0;
 }
 
-.sidebar-content .widget-area li ul {
-  margin-bottom: 1rem;
-  margin-left: 0;
+.price_slider_wrapper .ui-slider-horizontal {
+  height: 3px;
+}
+
+.price_slider_wrapper .ui-widget-content {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.price_slider_wrapper .ui-widget-content .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
   display: block;
-  list-style: none;
+  border: 0;
+  background: #000;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
-.sidebar-content .widget-area li ul li a {
-  display: inline;
+.price_slider_wrapper .ui-widget-content .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1em;
+  height: 1em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  cursor: ew-resize;
+  outline: 0;
+  background: #2c2d33;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: -.35em;
+  opacity: 1;
+}
+
+.price_slider_wrapper .ui-widget-content .ui-slider-handle:last-child {
+  margin-left: -10px;
+}
+
+.price_slider_wrapper .price_slider_amount {
+  float: left;
+  width: 100%;
+}
+
+.price_slider_wrapper .price_slider_amount .button {
+  float: left;
+  font-size: 0.75rem;
+}
+
+.price_slider_wrapper .price_label {
+  font-size: 0.8rem;
+  line-height: 2rem;
+  text-align: right;
+}
+
+.yith-wcan-label {
+  list-style-type: none;
+  margin: 1rem 0 1rem;
+}
+
+.yith-wcan-label li a {
+  padding: 0.5rem 1rem;
+  background: #efefef;
+  margin-right: 0.2rem;
+}
+
+.yith-wcan-color {
+  list-style-type: none;
+  margin: 0 0;
+}
+
+.yith-wcan-color li {
+  display: block;
+  float: none;
+  margin: 0;
+  clear: both;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+.yith-wcan-color li a {
+  padding: 0.5rem 1rem;
+  display: block;
+  width: 25px;
+  height: 25px;
+  text-indent: 25px;
+  line-height: 0.7rem;
 }
 
 #contato-home {

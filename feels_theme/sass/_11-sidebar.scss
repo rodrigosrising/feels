@@ -11,23 +11,99 @@
     }
   }
 }
-.sidebar-content{
-  .widget-area{
-    li{
-      a{
-        padding: 0;
+
+.price_slider_wrapper{
+  .ui-slider{
+    position: relative;
+    text-align: left;
+    margin: 1rem 0;
+  }
+  .ui-slider-horizontal{
+    height: 3px;
+  }
+  .ui-widget-content{
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background: rgba($preto,.7);
+    .ui-slider-range {
+      position: absolute;
+      z-index: 1;
+      font-size: .7em;
+      display: block;
+      border: 0;
+      background: $preto;
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+    }
+    .ui-slider-handle {
+      position: absolute;
+      z-index: 2;
+      width: 1em;
+      height: 1em;
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      cursor: ew-resize;
+      outline: 0;
+      background: #2c2d33;
+      box-sizing: border-box;
+      margin-top: -.35em;
+      opacity: 1;
+      &:last-child{
+        margin-left: -10px;
       }
-      ul{
-        margin-bottom: 1rem;
-        margin-left: 0;
-        display: block;
-        list-style: none;
-        li{
-          a{
-            display: inline;
-          }
-        }
-      }
+    }
+  }
+
+  .price_slider_amount{
+    float: left;
+    width: 100%;
+    .button {
+      float: left;
+      font-size: 0.75rem;
+    }
+  }
+
+  .price_label{
+    font-size: 0.8rem;
+    line-height: 2rem;
+    text-align: right;
+  }
+}
+
+.yith-wcan-label{
+  list-style-type: none;
+  margin: 1rem 0 1rem;
+  li{
+    a{
+      padding: 0.5rem 1rem;
+      background: #efefef;
+      margin-right: 0.2rem;
+    }
+  }
+}
+.yith-wcan-color{
+  list-style-type: none;
+  margin: 0 0;
+  li{
+    display: block;
+    float: none;
+    margin: 0;
+    clear: both;
+    height: auto;
+    margin: 0.5rem 0;
+    a{
+      padding: 0.5rem 1rem;
+      display: block;
+      width: 25px;
+      height: 25px;
+      text-indent: 25px;
+      line-height: 0.7rem;
     }
   }
 }

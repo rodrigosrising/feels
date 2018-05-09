@@ -5,9 +5,19 @@
   padding: 2rem 0;
 }
 #breadcrumbs{
-  padding: 3rem 0 0;
+  // padding: 3rem 0 0;
+  padding: 1rem 0;
+  background: lighten($preto, 0);
+  color: $branco;
   .breadcrumbs{
     margin-bottom: 0;
+    li{
+      color: $branco;
+      font-weight: 600;
+      a{
+        font-weight: 400;
+      }
+    }
   }
 }
 

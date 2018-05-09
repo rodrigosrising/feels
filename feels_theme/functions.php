@@ -187,10 +187,10 @@ function bfc_widgets_init() {
 		'name'          => 'Sidebar Loja',
 		'id'            => 'shop',
 		'class'         => 'shop',
-		'before_widget' => '<li class="widget-sidebar-loja">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<a><h3 class="uppercase section-title">',
-		'after_title'   => '</h3></a>',
+		'before_widget' => '<aside class="widget widget-sidebar-loja clearfix">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="uppercase section-title">',
+		'after_title'   => '</h3>',
 		) );
 
 	}
