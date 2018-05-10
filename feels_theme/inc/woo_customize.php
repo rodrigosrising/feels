@@ -2,16 +2,6 @@
 /*-------------------------------------------------------------------------*/
 /*  WOOCOMMERCE
 /*-------------------------------------------------------------------------*/
-// Remove each style one by one
-// add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-// function jk_dequeue_styles( $enqueue_styles ) {
-// 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-// 	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-// 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-// 	return $enqueue_styles;
-// }
-
-// Or just remove them all in one line
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
@@ -47,8 +37,21 @@ add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
 
 } );
 
+/*BREADCRUMB*/
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+	return array(
+		'delimiter'   => '',
+		'wrap_before' => '<nav aria-label="Você está em:" role="navigation" itemprop="breadcrumb"><ul class="breadcrumbs">',
+		'wrap_after'  => '</ul></nav>',
+		'before'      => '<li>',
+		'after'       => '</li>',
+		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+	);
+}
+
 /*custom excerpt*/
-remove_action( 'woocommerce_after_shop_loop_item_title', 'my_custom_excerpt', 15 );
+// remove_action( 'woocommerce_after_shop_loop_item_title', 'my_custom_excerpt', 15 );
 
 function my_custom_excerpt(){
 	echo '<p>' .excerpt(8) .'</p>';
@@ -85,24 +88,12 @@ function bbloomer_variation_price_format( $price, $product ) {
 	return $price;
 }
 
-/** remove product tabs **/
-remove_action( 'woocommerce_after_single_product_summary' ,'woocommerce_output_product_data_tabs',10);
-// add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
-
-// function woo_remove_product_tabs( $tabs ) {
-
-//     unset( $tabs['description'] );      	// Remove the description tab
-//     unset( $tabs['reviews'] ); 			// Remove the reviews tab
-//     unset( $tabs['additional_information'] );  	// Remove the additional information tab
-
-//     return $tabs;
-//   }
-
-  /** remove related products **/
-  // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /*SHOP PAGE*/
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 add_action( 'woocommerce_after_shop_loop', 'custom_pagination', 10 );
 function custom_pagination(){
@@ -112,53 +103,29 @@ function custom_pagination(){
 }
 
 /*SINGLE PRODUCT PAGE*/
-// remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
-add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 5 );
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'the_content', 20 );
 
-/*BREADCRUMB*/
-add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
-function jk_woocommerce_breadcrumbs() {
-	return array(
-		'delimiter'   => '',
-		'wrap_before' => '<nav aria-label="Você está em:" role="navigation" itemprop="breadcrumb"><ul class="breadcrumbs">',
-		'wrap_after'  => '</ul></nav>',
-		'before'      => '<li>',
-		'after'       => '</li>',
-		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-	);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+remove_action( 'woocommerce_after_single_product_summary' ,'woocommerce_output_product_data_tabs',10);
+
+/*cart page*/
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+function searchfilter($query) {
+if ($query->is_search &&is_woocommerce() && !is_admin() ) {
+		if(isset($_GET['post_type'])) {
+				$type = $_GET['post_type'];
+						if($type == 'products') {
+								$query->set('post_type',array('products'));
+						}
+		}
 }
-
-// add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'mmx_remove_select_text');
-// function mmx_remove_select_text( $args ){
-//     $args['show_option_none'] = '';
-//     return $args;
-// }
-
-
-
-
-  /*cart page*/
-  remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-
-
-  function searchfilter($query) {
-    if ($query->is_search &&is_woocommerce() && !is_admin() ) {
-        if(isset($_GET['post_type'])) {
-            $type = $_GET['post_type'];
-                if($type == 'products') {
-                    $query->set('post_type',array('products'));
-                }
-        }
-    }
 return $query;
 }
 add_filter('pre_get_posts','searchfilter');

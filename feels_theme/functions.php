@@ -10,7 +10,7 @@ function theme_scripts() {
 	wp_enqueue_style( 'animate', get_stylesheet_directory_uri() . '/assets/css/animate.css' );
 	wp_enqueue_style( 'owl', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css' );
 	wp_enqueue_style( 'owl-theme', get_stylesheet_directory_uri() . '/assets/css/owl.theme.default.css' );
-	wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Raleway:400,700|Titillium+Web:400,700,900' );
+	wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Oswald|Raleway:400,700|Titillium+Web:400,700,900' );
 	// wp_enqueue_style( 'font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/css/app.css' );
 	wp_enqueue_style( 'theme_style', get_stylesheet_uri() );
@@ -116,6 +116,7 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 			array(
 				'header-menu' => 'Header Menu',
 				'footer-menu-loja' => 'Footer Menu Loja',
+				'footer-menu-institucional' => 'Footer Menu Institucional',
 				)
 			);
 		}
@@ -152,27 +153,27 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 			echo '<ul data-accordion-menu data-submenu-toggle="true" class="vertical menu accordion-menu off-canvas-menu">'.$fallback.'</ul>';
 		}
 
-		// class Walker_Simple_Example extends Walker_Category {
+		class Walker_Simple_Example extends Walker_Category {
 
-		// 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		// 		$indent = str_repeat("\t", $depth);
-		// 		$output .= "\n$indent<ul class=\"menu vertical\">\n";
-		// 	}
-		// }
+			function start_lvl( &$output, $depth = 0, $args = array() ) {
+				$indent = str_repeat("\t", $depth);
+				$output .= "\n$indent<ul class=\"menu vertical\">\n";
+			}
+		}
 
-		// function vertical_menu_fallback($args)
-		// {
-		// /*
-		// * Instantiate new Page Walker class instead of applying a filter to the
-		// * "wp_page_menu" function in the event there are multiple active menus in theme.
-		// */
+		function vertical_menu_fallback($args)
+		{
+		/*
+		* Instantiate new Page Walker class instead of applying a filter to the
+		* "wp_page_menu" function in the event there are multiple active menus in theme.
+		*/
 
-		// $walker_page = new Walker_Page();
-		// $fallback = $walker_page->walk(get_pages(), 0);
-		// $fallback = str_replace("<ul class='children'>", '<ul class="menu vertical footer-menu" >', $fallback);
+		$walker_page = new Walker_Page();
+		$fallback = $walker_page->walk(get_pages(), 0);
+		$fallback = str_replace("<ul class='children'>", '<ul class="menu vertical footer-menu uppercase" >', $fallback);
 
-		// echo '<ul class="menu vertical footer-menu">'.$fallback.'</ul>';
-		// }
+		echo '<ul class="menu vertical footer-menu uppercase">'.$fallback.'</ul>';
+		}
 
 	} endif;// bfc_setup
 add_action( 'after_setup_theme', 'bfc_setup' );
@@ -314,8 +315,3 @@ add_filter( 'post_class', 'change_sticky_class' );
 // Customizer additions
 require get_template_directory() . '/inc/theme_acf_func.php';
 require get_template_directory() . '/inc/woo_customize.php';
-
-
-
-remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 5 );

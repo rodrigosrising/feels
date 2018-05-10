@@ -16,9 +16,18 @@
       font-weight: 600;
       a{
         font-weight: 400;
+        &:hover{
+          color: $cor;
+        }
       }
     }
   }
+}
+
+.justify-content-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // ADMIN
@@ -47,4 +56,13 @@
       }
     }
   }
+}
+
+.woocommerce-message{
+  border: 1px solid #ddd;
+  color: $branco;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: #4CAF50;
 }

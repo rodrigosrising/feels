@@ -475,6 +475,11 @@ h6 {
   padding-right: 0;
 }
 
+.footer-menu .active a {
+  background: none;
+  color: #000;
+}
+
 .pagamentos-menu .payment {
   margin-right: 0.3rem;
 }
@@ -573,6 +578,22 @@ h6 {
   font-weight: 400;
 }
 
+#breadcrumbs .breadcrumbs li a:hover {
+  color: #ff5140;
+}
+
+.justify-content-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .section-wrapper-login {
   padding-bottom: 0;
 }
@@ -605,6 +626,15 @@ h6 {
 .section-wrapper-login .login-wrapper .grid-login h2 {
   color: #FFF;
   text-transform: uppercase;
+}
+
+.woocommerce-message {
+  border: 1px solid #ddd;
+  color: #FFF;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: #4CAF50;
 }
 
 .destaque-bg {
@@ -736,19 +766,6 @@ h6 {
   list-style: none;
 }
 
-.lista-produtos .product img,
-.owl-produtos-destaques .product img {
-  width: 100%;
-  -webkit-filter: brightness(100%);
-  filter: brightness(100%);
-}
-
-.lista-produtos .product:hover img,
-.owl-produtos-destaques .product:hover img {
-  -webkit-filter: brightness(102%);
-  filter: brightness(102%);
-}
-
 .lista-produtos .product .descricao-produto,
 .owl-produtos-destaques .product .descricao-produto {
   padding: 0.7rem;
@@ -762,9 +779,8 @@ h6 {
 
 .lista-produtos .product .descricao-produto .price,
 .owl-produtos-destaques .product .descricao-produto .price {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25rem;
   color: #000;
 }
 
@@ -778,6 +794,57 @@ h6 {
 .lista-produtos .product .descricao-produto .price ins,
 .owl-produtos-destaques .product .descricao-produto .price ins {
   text-decoration: none;
+}
+
+.lista-produtos .product .add-cart-wrapper,
+.owl-produtos-destaques .product .add-cart-wrapper {
+  position: relative;
+}
+
+.lista-produtos .product .add-cart-wrapper .add-cart,
+.owl-produtos-destaques .product .add-cart-wrapper .add-cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  z-index: 2;
+}
+
+.lista-produtos .product .woocommerce-loop-product__link,
+.owl-produtos-destaques .product .woocommerce-loop-product__link {
+  display: block;
+}
+
+.lista-produtos .product img,
+.owl-produtos-destaques .product img {
+  width: 100%;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+}
+
+.lista-produtos .product:hover img,
+.owl-produtos-destaques .product:hover img {
+  -webkit-filter: brightness(102%);
+  filter: brightness(102%);
+}
+
+.lista-produtos .product:hover .add-cart,
+.owl-produtos-destaques .product:hover .add-cart {
+  opacity: 1;
 }
 
 .lista-produtos .filter-box,
@@ -843,36 +910,66 @@ span.onsale {
   overflow: hidden;
 }
 
-.single-product h1 {
+.single-product .summary h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
 }
 
-.single-product p.price {
+.single-product .summary p.price {
   font-size: 3rem;
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 600;
+  font-family: "Oswald", sans-serif;
 }
 
-.single-product .stock {
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 600;
+.single-product .summary p.price del {
+  color: #484848;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
-.single-product #produto-features-view {
-  background: #000;
+.single-product .summary p.price ins {
+  text-decoration: none;
+  color: #000;
+}
+
+.single-product .summary .stock {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  color: #ff5140;
+}
+
+.single-product .summary .product_meta {
+  color: #000;
+  clear: both;
+}
+
+.single-product .summary .product_meta span {
+  display: inline-block;
+}
+
+.single-product .summary .product_meta .posted_in {
+  display: block;
 }
 
 table.variations tbody,
 table.variations thead,
 table.variations tfoot {
   border: none;
+  background: none;
 }
 
 table.variations tbody tr:nth-child(even),
 table.variations thead tr:nth-child(even),
 table.variations tfoot tr:nth-child(even) {
   background: none;
+}
+
+table.variations tbody th,
+table.variations tbody td,
+table.variations thead th,
+table.variations thead td,
+table.variations tfoot th,
+table.variations tfoot td {
+  padding: 0 0.5rem;
 }
 
 table.variations .label {
@@ -883,8 +980,8 @@ table.variations .label {
 
 table.variations .label label {
   font-size: 1rem;
-  line-height: 3;
-  font-weight: 600;
+  line-height: 2.5rem;
+  font-weight: 400;
   color: #484848;
   font-family: "Titillium Web", sans-serif;
 }
@@ -901,6 +998,145 @@ table.variations .tawcvs-swatches .swatch {
 table.variations .tawcvs-swatches .swatch-label {
   border: 1px solid #aeaeae;
   color: #484848;
+}
+
+#produto-features-view {
+  background: #f7f7f7;
+}
+
+#produto-features-view .destaque-bg {
+  border: none;
+  height: 75vh;
+}
+
+#produto-features-view .destaque-bg.arrow-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#produto-features-view .destaque-bg.arrow-right .arrow {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-top: 100px solid #f7f7f7;
+  border-right: 100px solid transparent;
+  margin-right: -4.5rem;
+}
+
+#produto-features-view .destaque-bg.arrow-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#produto-features-view .destaque-bg.arrow-left .arrow {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-top: 100px solid #f7f7f7;
+  border-left: 100px solid transparent;
+  margin-left: -5rem;
+}
+
+#produto-features-view .destaque-bg .arrow {
+  width: 0;
+  height: 0;
+}
+
+#produto-features-view .product-feature {
+  padding: 3rem 1rem;
+  position: relative;
+  color: #000;
+  width: 80%;
+}
+
+#produto-features-view .product-feature h3,
+#produto-features-view .product-feature h5 {
+  color: #000;
+  text-transform: uppercase;
+}
+
+#produto-features-view .product-feature p {
+  color: #000;
+}
+
+#produto-features-view .product-feature ul {
+  list-style-type: square;
+  list-style-position: inside;
+  margin: 1rem 0;
+}
+
+.quantity {
+  width: 126px;
+  height: 40px;
+  margin: 0 2px 0 0;
+  display: inline-block;
+  float: left;
+}
+
+.quantity input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.quantity .qty-button {
+  display: block;
+  background: none;
+  background: #FFF;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 40px;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  cursor: pointer;
+  float: left;
+}
+
+.quantity .qty-button.minus {
+  line-height: 38px;
+}
+
+.quantity .qty-button.plus {
+  line-height: 42px;
+}
+
+.quantity .qty {
+  width: 46px;
+  height: 100%;
+  line-height: 55px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  text-align: center;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0;
+  float: left;
+}
+
+.woocommerce-cart-form .cart .product-thumbnail a {
+  display: block;
+}
+
+.woocommerce-cart-form .cart .product-thumbnail a .size-woocommerce_thumbnail {
+  width: 80px;
 }
 
 .pagination {
@@ -1139,6 +1375,17 @@ table.variations .tawcvs-swatches .swatch-label {
 
 .footer h4 {
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.footer .footer-menu li a {
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+.footer .social-media-footer li a {
+  font-size: 1.6rem;
 }
 
 @media screen and (min-width: 40em) {
