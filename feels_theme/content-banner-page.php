@@ -21,7 +21,7 @@
 						<div style="background-image: url(<?php echo get_theme_file_uri( '/assets/img/destaque-full.jpg' ) ?>);" class="cell banner-interno"></div>
 					<?php endif; ?>
 
-				<?php elseif (is_account_page() && is_user_logged_in() ): ?>
+				<?php elseif (is_account_page() && is_user_logged_in() or is_page()): ?>
 
 					<?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 					if ($image): ?>

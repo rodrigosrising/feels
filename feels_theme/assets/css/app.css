@@ -629,12 +629,24 @@ h6 {
 }
 
 .woocommerce-message {
-  border: 1px solid #ddd;
-  color: #FFF;
+  border: 1px solid #f1f1f1;
+  color: #484848;
   font-weight: 400;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  background: #4CAF50;
+  background: #f7f7f7;
+}
+
+.woocommerce-message .button {
+  margin: 0.3rem 0;
+}
+
+.page-template-template-faq ul.accordion .accordion-title {
+  background: #000;
+  color: #FFF;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .destaque-bg {

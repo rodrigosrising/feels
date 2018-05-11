@@ -128,14 +128,37 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<tr>
 				<td colspan="6" class="actions">
 
+				<div class="grid-x grid-margin-x grid-padding-x">
+					<div class="small-12 medium-6 large-6 cell">
+						<h4>O que você gostaria de fazer?</h4>
+						<p><small>Se você deseja utilizar um cupom utilize a opção abaixo:</small></p>
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
 							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
-						</div>
+
+							<button type="submit" class="button float-right" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+						</div><!-- coupon -->
+
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					</div><!-- columns -->
+					<div class="small-12 medium-6 large-6 cell">
+						<div class="cart-collaterals">
+							<?php
+								/**
+								 * Cart collaterals hook.
+								 *
+								 * @hooked woocommerce_cross_sell_display
+								 * @hooked woocommerce_cart_totals - 10
+								 */
+								do_action( 'woocommerce_cart_collaterals' );
+							?>
+						</div><!-- cart-collaterals -->
+					</div><!-- columns -->
+				</div><!-- row -->
+
+
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -149,16 +172,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
-	?>
-</div>
+
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

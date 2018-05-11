@@ -59,10 +59,25 @@
 }
 
 .woocommerce-message{
-  border: 1px solid #ddd;
-  color: $branco;
+  border: 1px solid #f1f1f1;
+  color: $texto;
   font-weight: 400;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  background: #4CAF50;
+  background: lighten($preto, 97);
+  .button{
+    margin: 0.3rem 0;
+  }
+}
+
+.page-template-template-faq{
+  ul.accordion{
+    .accordion-title{
+      background: $preto;
+      color: $branco;
+      font-family: $titilium;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
 }
