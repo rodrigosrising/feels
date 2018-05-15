@@ -34,6 +34,7 @@ get_header( 'shop' ); ?>
 			?>
 			<div class="cell auto">
 				<div class="grid-container full">
+
 					<?php if ( have_posts() ) : ?>
 
 						<?php

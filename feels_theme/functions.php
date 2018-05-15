@@ -10,6 +10,7 @@ function theme_scripts() {
 	wp_enqueue_style( 'animate', get_stylesheet_directory_uri() . '/assets/css/animate.css' );
 	wp_enqueue_style( 'owl', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css' );
 	wp_enqueue_style( 'owl-theme', get_stylesheet_directory_uri() . '/assets/css/owl.theme.default.css' );
+	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/assets/css/fontawesome-all.min.css' );
 	wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Oswald|Raleway:400,700|Titillium+Web:400,700,900' );
 	// wp_enqueue_style( 'font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/css/app.css' );
@@ -21,7 +22,7 @@ function theme_scripts() {
 	wp_enqueue_script('what-input', get_template_directory_uri() . '/assets/js/vendor/what-input.js', array(), 'null', true);
 	wp_enqueue_script('foundation', get_template_directory_uri() . '/assets/js/vendor/foundation.js', array(), 'null', true);
 	wp_enqueue_script('motion-ui', get_template_directory_uri() . '/assets/js/vendor/motion-ui.js', array(), 'null', true);
-	wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/releases/v5.0.10/js/all.js', array(), 'null', true);
+	// wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/releases/v5.0.10/js/all.js', array(), 'null', true);
 	wp_enqueue_script('owlslide', get_template_directory_uri() . '/assets/js/vendor/owl.carousel.min.js', array(), 'null', true);
 	wp_enqueue_script('stellar', get_template_directory_uri() . '/assets/js/vendor/jquery.stellar.js', array(), 'null', true);
 	wp_enqueue_script('theme_script', get_template_directory_uri() . '/assets/js/app.js', array(), 'null', true);
@@ -97,7 +98,7 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 			$fallback = $walker_page->walk(get_pages(), 0);
 			$fallback = str_replace("<ul class='children'>", '<ul class="menu vertical children">', $fallback);
 
-			echo '<ul class="menu main-menu float-left uppercase show-for-medium">'.$fallback.'</ul>';
+			echo '<ul class="menu main-menu float-left uppercase show-for-medium dropdown" data-dropdown-menu>'.$fallback.'</ul>';
 		}
 
 		//Add Menu to theme setup hook
@@ -150,7 +151,7 @@ if ( ! function_exists( 'bfc_setup' ) ) :
 			$fallback = $walker_page->walk(get_pages(), 0);
 			$fallback = str_replace("<ul class='children'>", '<ul class="menu vertical children">', $fallback);
 
-			echo '<ul data-accordion-menu data-submenu-toggle="true" class="vertical menu accordion-menu off-canvas-menu">'.$fallback.'</ul>';
+			echo '<ul data-accordion-menu data-submenu-toggle="true" class="vertical menu accordion-menu off-canvas-menu" data-accordion-menu>'.$fallback.'</ul>';
 		}
 
 		class Walker_Simple_Example extends Walker_Category {

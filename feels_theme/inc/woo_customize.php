@@ -11,12 +11,12 @@ add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
 	ob_start();
 	?>
 
-	<div class="cart-contents">
+	<div class="cart-head">
 		<i class="fas fa-shopping-bag"></i>
 		<span class="item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 	</div>
 
-	<?php $fragments['div.cart-contents'] = ob_get_clean();
+	<?php $fragments['div.cart-head'] = ob_get_clean();
 
 	return $fragments;
 
@@ -27,11 +27,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
 	ob_start();
 	?>
 
-	<div class="header-quickcart">
+	<div class="widget_shopping_cart_content">
 			<?php woocommerce_mini_cart(); ?>
 	</div>
 
-	<?php $fragments['div.header-quickcart'] = ob_get_clean();
+	<?php $fragments['div.widget_shopping_cart_content'] = ob_get_clean();
 
 	return $fragments;
 

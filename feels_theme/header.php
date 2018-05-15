@@ -8,7 +8,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('body'); ?>>
 	<div id="offCanvasLeft" data-off-canvas class="off-canvas position-left">
 		<!--Menu-->
 		<nav>
@@ -18,7 +18,7 @@
 				'menu' => __( 'Top Bar Menu', 'bfd_shop' ),
 				'menu_class' => 'vertical menu accordion-menu off-canvas-menu',
 				'theme_location' => 'header-menu',
-				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 				'walker' => new F6_OFFCANVAS_MENU_WALKER(),
 				'fallback_cb' => 'f6_offcanvas_menu_fallback',
 			));
@@ -44,22 +44,26 @@
 								wp_nav_menu(array(
 									'container' => false,
 									'menu' => __( 'Top Bar Menu', 'bfd_shop' ),
-									'menu_class' => 'menu main-menu float-left uppercase show-for-medium',
+									'menu_class' => 'menu main-menu float-left uppercase show-for-medium dropdown',
 									'theme_location' => 'header-menu',
-									'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+									'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
 									'walker' => new F6_TOPBAR_MENU_WALKER(),
 									'fallback_cb' => 'f6_topbar_menu_fallback',
 								));
 							?>
 							<ul class="menu acc-menu float-right uppercase">
-								<li><a href=""><i class="fas fa-search"></i></a></li>
+								<li><span class="search-button"><i class="fas fa-search"></i></span></li>
 								<li class="show-for-medium"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e('Minha Conta','woothemes'); ?></a></li>
-								<li>
-									<div class="cart-contents">
+								<li id="minicart">
+									<div class="cart-head">
 										<i class="fas fa-shopping-bag"></i>
 										<span class="item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 									</div>
-									<div class="header-quickcart"><?php woocommerce_mini_cart(); ?></div>
+									<div class="cart-popup widget_shopping_cart">
+										<div class="widget_shopping_cart_content">
+											<?php woocommerce_mini_cart(); ?>
+										</div>
+									</div>
 								</li>
 							</ul>
 						</nav>

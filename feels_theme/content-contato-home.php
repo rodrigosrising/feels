@@ -25,7 +25,7 @@
 								<div class="grid-container">
 									<div class="grid-x grid-margin-x grid-padding-x">
 										<div class="small-12 cell">
-											<?php echo do_shortcode( '[contact-form-7 id="128" title="Formulário de contato 1"]' ) ?>
+											<?php echo do_shortcode( '[contact-form-7 id="128" title="Formulário de contato 1"]' ); ?>
 										</div>
 									</div>
 								</div>

@@ -5,6 +5,33 @@
 
 			<div class="grid-container fluid full">
 				<div class="grid-x">
+				<?php if (is_shop() or is_product_category()): ?>
+
+					<header class="woocommerce-products-header">
+						<div class="grid-container">
+							<div class="grid-x">
+								<div class="cell auto">
+									<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+										<h1 class="woocommerce-products-header__title page-title uppercase"><?php woocommerce_page_title(); ?></h1>
+									<?php endif; ?>
+
+									<?php
+									/**
+									 * Hook: woocommerce_archive_description.
+									 *
+									 * @hooked woocommerce_taxonomy_archive_description - 10
+									 * @hooked woocommerce_product_archive_description - 10
+									 */
+									do_action( 'woocommerce_archive_description' );
+									?>
+
+								</div>
+							</div>
+						</div>
+					</header>
+				<?php endif; ?>
+
+
 				<?php if (is_product_category()): ?>
 					<?php global $wp_query;
 						// get the query object

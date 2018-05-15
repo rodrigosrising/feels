@@ -17,11 +17,11 @@
 <!--main-->
 <main class="main">
 
-	<?php  get_template_part( 'content-destaques' ); ?>
+	<?php get_template_part( 'content-destaques' ); ?>
 
-	<?php  get_template_part( 'content-produtos-destaques' ); ?>
+	<?php get_template_part( 'content-produtos-destaques' ); ?>
 
-	<?php  get_template_part( 'content-contato-home' ); ?>
+	<?php // get_template_part( 'content-contato-home' ); ?>
 
 </main>
 <!--main-->

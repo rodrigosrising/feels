@@ -20,4 +20,133 @@
       }
     }
   }
+  .button-newsletter {
+    font-family: $fontawesome;
+    font-weight: bold;
+  }
+}
+.wpcf7{
+  .input-group-button{
+    position: relative;
+    .ajax-loader{
+      position: absolute;
+      background-color: rgba($branco, 1);
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.search-button{
+  border-bottom: 2px solid transparent;
+  margin-bottom: 0;
+  padding: 0.7rem 0.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.search-overlay {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($branco, .96);
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.09);
+  transition: opacity .3s, transform .3s, visibility .3s;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__top {
+    background-color: rgba($branco, .12);
+    margin-top: 37px;
+    width: 100%;
+  }
+  &__container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $texto;
+  }
+  &__icon {
+    margin-right: 10px;
+    font-size: 1.8rem;
+    color: $cor;
+  }
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__section-title {
+    margin: 30px 0 1px 0;
+    font-weight: 400;
+    color: $texto;
+    font-size: 2rem;
+    padding: 15px 0;
+    border-bottom: 1px solid #CCC;
+  }
+
+  &__close {
+    top: 13px;
+    right: 16px;
+    font-size: 2.1rem;
+    cursor: pointer;
+    transition: all .3s;
+    background-color: $branco;
+    color: $cor;
+    line-height: .7;
+    margin-left: 10px;
+  }
+
+  &__close:hover {
+    opacity: 1;
+  }
+
+  .one-half {
+    padding-bottom: 0;
+  }
+}
+
+.search-term {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 300;
+  outline: none;
+  color: $cor;
+  text-shadow: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  &:focus{
+    text-shadow: none;
+    box-shadow: none;
+    background: none;
+    border: none;
+  }
+}
+
+.body-no-scroll {
+  overflow: hidden;
 }

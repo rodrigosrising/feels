@@ -42,12 +42,7 @@
 				</div>
 				<div class="cell small-12 medium-6 large-3">
 					<h4>Newsletter</h4>
-					<div class="input-group">
-						<input type="email" class="input-group-field">
-						<div class="input-group-button">
-							<button type="submit" class="button"><i class="fas fa-paper-plane"></i></button>
-						</div>
-					</div>
+					<?php echo do_shortcode( '[contact-form-7 id="151" title="Newsletter"]' ); ?>
 					<h4>Mídias Sociais
 						<ul class="menu social-media social-media-footer">
 						<?php if( get_field('instagram', 'option') ): ?>
@@ -66,6 +61,22 @@
 		</div>
 	</footer>
 	<!--footer-->
+</div>
+<div class="search-overlay">
+	<div class="search-overlay__top">
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x grid-margin-x">
+					<div class="cell small-12">
+						<div class="search-overlay__container">
+							<?php get_product_search_form() ?>
+							<!-- <i class="fas fa-search search-overlay__icon float-left" aria-hidden="true"></i>
+								<input type="search" class="search-term" placeholder="O que está procurando?" id="search-term">
+							<i class="fas fa-window-close search-overlay__close float-right" aria-hidden="true"></i> -->
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
 </div>
 <?php wp_footer(); ?>
 </body>
